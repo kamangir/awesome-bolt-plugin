@@ -35,6 +35,10 @@ function test_abcli_plugin_name_from_repo() {
     abcli_assert \
         $(abcli_plugin_name_from_repo aiart) \
         aiart
+
+    abcli_assert \
+        $(abcli_plugin_name_from_repo notebooks-and-scripts) \
+        notebooks_and_scripts
 }
 
 function test_abcli_get_module_name_from_plugin() {
@@ -70,4 +74,8 @@ function test_abcli_get_module_name_from_plugin() {
     abcli_assert \
         $(abcli_get_module_name_from_plugin aiart) \
         articraft
+
+    abcli_assert \
+        $(abcli_get_module_name_from_plugin notebooks_and_scripts) \
+        blueflow
 }
