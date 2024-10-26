@@ -6,11 +6,11 @@ ICON = "🪄"
 
 DESCRIPTION = f"{ICON} a language to speak AI."
 
-VERSION = "9.366.1"
+VERSION = "9.367.1"
 
 REPO_NAME = "awesome-bash-cli"
 
-MARQUEE = "https://github.com/kamangir/awesome-bash-cli/raw/main/assets/marquee.png"
+MARQUEE = "https://github.com/kamangir/assets/blob/main/awesome-bash-cli/marquee-2024-10-26.jpg?raw=true"
 
 
 def fullname() -> str:

@@ -2,7 +2,7 @@
 
 🪄 `abcli` is an implementation of 🔻 [giza](https://github.com/kamangir/giza) and a language [to speak AI](https://github.com/kamangir/kamangir).
 
-![image](https://github.com/kamangir/assets/blob/main/awesome-bash-cli/marquee-9-306-1.png?raw=true)
+![image](https://github.com/kamangir/assets/blob/main/awesome-bash-cli/marquee-2024-10-26.jpg?raw=true)
 
 # release install
 
@@ -63,4 +63,4 @@ create a copy of [`sample.env`](./abcli/sample.env) as `.env` and fill in the se
 
 [![pylint](https://github.com/kamangir/awesome-bash-cli/actions/workflows/pylint.yml/badge.svg)](https://github.com/kamangir/awesome-bash-cli/actions/workflows/pylint.yml) [![pytest](https://github.com/kamangir/awesome-bash-cli/actions/workflows/pytest.yml/badge.svg)](https://github.com/kamangir/awesome-bash-cli/actions/workflows/pytest.yml) [![bashtest](https://github.com/kamangir/awesome-bash-cli/actions/workflows/bashtest.yml/badge.svg)](https://github.com/kamangir/awesome-bash-cli/actions/workflows/bashtest.yml) [![PyPI version](https://img.shields.io/pypi/v/abcli.svg)](https://pypi.org/project/abcli/) [![PyPI - Downloads](https://img.shields.io/pypi/dd/abcli)](https://pypistats.org/packages/abcli)
 
-built by 🌀 [`blue_options-4.126.1`](https://github.com/kamangir/awesome-bash-cli), based on 🪄 [`abcli-9.366.1`](https://github.com/kamangir/awesome-bash-cli).
+built by 🌀 [`blue_options-4.126.1`](https://github.com/kamangir/awesome-bash-cli), based on 🪄 [`abcli-9.367.1`](https://github.com/kamangir/awesome-bash-cli).
