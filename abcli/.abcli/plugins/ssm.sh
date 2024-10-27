@@ -23,4 +23,4 @@ abcli_source_caller_suffix_path /ssm
 
 # to get around a pip import issue.
 abcli_env_dot_load \
-    caller,ssm,plugin=abcli/assets,suffix=/../../..
+    caller,ssm,plugin=abcli,suffix=/../../..
