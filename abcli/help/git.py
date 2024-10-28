@@ -130,8 +130,6 @@ def help_get_repo_name(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "actions|repo"
-
     return show_usage(
         [
             "@git",
