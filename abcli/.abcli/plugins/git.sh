@@ -2,31 +2,8 @@
 
 function abcli_git() {
     local task=$(abcli_unpack_keyword $1)
-
-    if [ "$task" == "help" ]; then
-        abcli_show_usage "@git <repo_name> <command-line>" \
-            "run '@git <command-line>' in <repo_name>."
-
-        abcli_git increment_version "$@"
-        abcli_git_browse "$@"
-        abcli_git_checkout "$@"
-        abcli_git create_branch "$@"
-        abcli_git clone "$@"
-        abcli_git get_repo_name "$@"
-        abcli_git pull $@
-        abcli_git_push "$@"
-        abcli_git recreate_ssh "$@"
-        abcli_git reset "$@"
-        abcli_git review "$@"
-        abcli_git status "$@"
-        abcli_git sync_fork "$@"
-        return
-    fi
-
-    if [ "$task" == "++" ]; then
-        abcli_git increment_version "${@:2}"
-        return
-    fi
+    [[ "$task" == "increment" ]] && task="increment_version"
+    [[ "$task" == "++" ]] && task="increment_version"
 
     if [ "$task" == "seed" ]; then
         abcli_seed git "${@:2}"
@@ -42,71 +19,10 @@ function abcli_git() {
 
         pushd $abcli_path_git/$repo_name >/dev/null
         abcli_git "${@:2}"
+        local status="$?"
         popd >/dev/null
 
-        return
-    fi
-
-    if [[ "$2" == "help" ]]; then
-        local options
-        local found=true
-        case $task in
-        clone)
-            options="${EOP}cd,~from_template,if_cloned,init,${EOPE}install$EOP,object,pull,source=<username/repo_name>$EOPE"
-            abcli_show_usage "@git clone <repo-name>$ABCUL$options" \
-                "clone <repo-name>."
-            ;;
-        create_pull_request)
-            abcli_show_usage "@git create_pull_request" \
-                "create a pull request in the repo."
-            ;;
-        get_branch)
-            abcli_show_usage "@git get_branch" \
-                "get brach name."
-            ;;
-        get_repo_name)
-            abcli_show_usage "@git get_repo_name" \
-                "get repo name."
-            ;;
-        increment_version)
-            local options="diff"
-            local args="--verbose 1"
-            abcli_show_usage "@git ++|increment|increment_version$ABCUL$EOP$options$ABCUL$args$EOPE" \
-                "increment repo version."
-            ;;
-        pull)
-            options="$EOP~all,${EOPE}init"
-            abcli_show_usage "@git pull $options" \
-                "pull."
-            ;;
-        recreate_ssh)
-            abcli_show_usage "@git recreate_ssh" \
-                "recreate github ssh key."
-            ;;
-        reset)
-            abcli_show_usage "@git reset" \
-                "reset to the latest commit of the current branch."
-            ;;
-        review)
-            abcli_show_usage "@git review" \
-                "review the repo."
-            ;;
-        sync_fork)
-            abcli_show_usage "@git sync_fork <branch-name>" \
-                "sync fork w/ upstream."
-            ;;
-        status)
-            options="~all"
-            abcli_show_usage "@git status $EOP$options$EOPE" \
-                "git status."
-            ;;
-        *)
-            found=false
-            ;;
-        esac
-
-        [[ "$found" == "true" ]] &&
-            return
+        return $status
     fi
 
     local function_name="abcli_git_$task"
@@ -117,7 +33,7 @@ function abcli_git() {
 
     local repo_name=$(abcli_git_get_repo_name)
     if [[ "$repo_name" == "unknown" ]]; then
-        abcli_log_error "-@git: $task: $(pwd): repo not found."
+        abcli_log_error "@git: $task: $(pwd): repo not found."
         return 1
     fi
 
@@ -130,7 +46,7 @@ function abcli_git() {
     if [[ "$task" == "get_branch" ]]; then
         # https://stackoverflow.com/a/1593487
         local branch_name="$(git symbolic-ref HEAD 2>/dev/null)" ||
-            local branch_name="master" # detached HEAD
+            branch_name="master" # detached HEAD
 
         echo ${branch_name##refs/heads/}
         return

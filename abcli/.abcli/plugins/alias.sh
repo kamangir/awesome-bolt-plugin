@@ -23,8 +23,6 @@ alias @git++="abcli_git increment_version"
 
 alias @gpu=abcli_gpu
 
-alias @help=abcli_help
-
 alias @init=abcli_init
 
 alias @instance=abcli_instance

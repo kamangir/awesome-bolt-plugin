@@ -2,22 +2,12 @@
 
 function abcli_git_push() {
     local message=$1
-
-    local options=$2
-
-    if [[ "$message" == "help" ]]; then
-        options="$EOP~action,browse,~create_pull_request,${EOPE}first$EOP,~increment_version,~status$EOPE"
-        local build_options="build,$abcli_pypi_build_options"
-        abcli_show_usage "@git push <message>$ABCUL$options$ABCUL$build_options" \
-            "push to the repo."
-        return
-    fi
-
     if [[ -z "$message" ]]; then
-        abcli_log_error "-@git: push: message not found."
+        abcli_log_error "@git: push: message not found."
         return 1
     fi
 
+    local options=$2
     local do_browse=$(abcli_option_int "$options" browse 0)
     local do_increment_version=$(abcli_option_int "$options" increment_version 1)
     local show_status=$(abcli_option_int "$options" status 1)
@@ -46,25 +36,28 @@ function abcli_git_push() {
     fi
 
     git add .
+    [[ $? -ne 0 ]] && return 1
 
     git commit -a -m "$message - kamangir/bolt#746"
+    [[ $? -ne 0 ]] && return 1
 
-    if [ "$first_push" == 1 ]; then
-        git push \
-            --set-upstream origin $(abcli_git get_branch)
-    else
-        git push
-    fi
+    local extra_args=""
+    [[ "$first_push" == 1 ]] &&
+        extra_args="--set-upstream origin $(abcli_git get_branch)"
 
-    [[ "$create_pull_request" == 1 ]] &&
+    git push $extra_args
+    [[ $? -ne 0 ]] && return 1
+
+    if [[ "$create_pull_request" == 1 ]]; then
         abcli_git create_pull_request
+        [[ $? -ne 0 ]] && return 1
+    fi
 
     [[ "$do_browse" == 1 ]] &&
         abcli_git_browse . actions
 
     local build_options=$3
-    [[ $(abcli_option_int "$build_options" build 0) == 1 ]] &&
+    if [[ $(abcli_option_int "$build_options" build 0) == 1 ]]; then
         abcli_pypi_build $build_options,plugin=$plugin_name
-
-    return 0
+    fi
 }
