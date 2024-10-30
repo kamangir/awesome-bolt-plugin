@@ -4,15 +4,8 @@ function abcli_git_checkout() {
     local thing=$1
 
     if [[ -z "$thing" ]]; then
-        abcli_log_error "-@git: checkout: args not found."
+        abcli_log_error "@git: checkout: args not found."
         return 1
-    fi
-
-    if [[ "$thing" == "help" ]]; then
-        options="rebuild"
-        abcli_show_usage "@git checkout$ABCUL<branch-name>|<path/filename>$ABCUL[$options]$ABCUL[<args>]" \
-            "git checkout <args>."
-        return
     fi
 
     local options=$2
@@ -22,10 +15,14 @@ function abcli_git_checkout() {
     git checkout \
         "$thing" \
         "${@:3}"
+    [[ $? -ne 0 ]] && return 1
 
-    [[ "$do_pull" == 1 ]] &&
+    if [[ "$do_pull" == 1 ]]; then
         git pull
+        [[ $? -ne 0 ]] && return 1
+    fi
 
-    [[ "$do_rebuild" == 1 ]] &&
+    if [[ "$do_rebuild" == 1 ]]; then
         abcli_git_push "rebuild"
+    fi
 }

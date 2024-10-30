@@ -2,12 +2,6 @@
 
 function abcli_git_browse() {
     local repo_name=$1
-    if [[ "$repo_name" == help ]]; then
-        options="actions"
-        abcli_show_usage "@git browse $EOP.|-|<repo-name>$ABCUL$options$EOPE" \
-            "browse <repo-name>."
-        return
-    fi
 
     local options=$2
     local browse_actions=$(abcli_option_int "$options" actions 0)
