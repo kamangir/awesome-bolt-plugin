@@ -29,8 +29,6 @@ alias @instance=abcli_instance
 
 alias @latex=abcli_latex
 
-alias @log=abcli_log
-
 alias @mac='if [ "$abcli_is_mac" == true ]; then'
 alias @.='fi'
 
