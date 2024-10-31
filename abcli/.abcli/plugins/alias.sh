@@ -8,8 +8,6 @@ alias @act=abcli_perform_action
 alias @action=abcli_perform_action
 alias @perform_action=abcli_perform_action
 
-alias @badge=abcli_badge
-
 alias @build_README=abcli_build_README
 
 alias @conda=abcli_conda
