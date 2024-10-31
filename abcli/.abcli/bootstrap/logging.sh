@@ -3,15 +3,6 @@
 function abcli_log() {
     local task=$(abcli_unpack_keyword "$1")
 
-    if [ "$task" == "help" ]; then
-        abcli_show_usage "@log <message>" \
-            "log message."
-
-        abcli_show_usage "@log verbose [on/off]" \
-            "verbose logging on/off."
-        return
-    fi
-
     if [ "$task" == "verbose" ]; then
         local what=${2-on}
 
