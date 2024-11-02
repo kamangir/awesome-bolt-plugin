@@ -40,8 +40,6 @@ def help_gpu_validate(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "validate"
-
     return show_usage(
         [
             "@gpu",
