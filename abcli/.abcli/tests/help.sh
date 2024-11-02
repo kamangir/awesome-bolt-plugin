@@ -5,24 +5,28 @@ function test_abcli_help() {
 
     local module
     for module in \
-        "abcli" \
+        "@git" \
+        "@git browse" \
+        "@git checkout" \
+        "@git clone" \
+        "@git create_branch" \
+        "@git create_pull_request" \
+        "@git get_branch" \
+        "@git get_repo_name" \
+        "@git increment_version" \
+        "@git pull" \
+        "@git push" \
+        "@git recreate_ssh" \
+        "@git reset" \
+        "@git review" \
+        "@git status" \
+        "@git sync_fork" \
         \
-        "abcli git" \
-        "abcli git browse" \
-        "abcli git checkout" \
-        "abcli git clone" \
-        "abcli git create_branch" \
-        "abcli git create_pull_request" \
-        "abcli git get_branch" \
-        "abcli git get_repo_name" \
-        "abcli git increment_version" \
-        "abcli git pull" \
-        "abcli git push" \
-        "abcli git recreate_ssh" \
-        "abcli git reset" \
-        "abcli git review" \
-        "abcli git status" \
-        "abcli git sync_fork"; do
+        "@gpu status get" \
+        "@gpu status show" \
+        "@gpu status validate" \
+        \
+        "abcli"; do
         abcli_eval ,$options \
             abcli_help $module
         [[ $? -ne 0 ]] && return 1

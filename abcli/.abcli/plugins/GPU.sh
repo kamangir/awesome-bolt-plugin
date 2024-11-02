@@ -3,14 +3,6 @@
 function abcli_gpu() {
     local task=$(abcli_unpack_keyword $1 status)
 
-    if [ "$task" == "help" ]; then
-        abcli_show_usage "abcli gpu validate" \
-            "validate gpu."
-
-        abcli_gpu_status "$@"
-        return
-    fi
-
     local function_name=abcli_gpu_$task
     if [[ $(type -t $function_name) == "function" ]]; then
         $function_name "${@:2}"
@@ -22,24 +14,12 @@ function abcli_gpu() {
         return
     fi
 
-    abcli_log_error "-abcli: gpu: $task: command not found."
+    abcli_log_error "@gpu: $task: command not found."
     return 1
 }
 
 function abcli_gpu_status() {
     local task=$(abcli_unpack_keyword $1 show)
-
-    if [ "$task" == "help" ]; then
-        abcli_show_usage "abcli gpu status [show]" \
-            "show gpu status."
-        abcli_show_usage "abcli gpu status get [~from_cache]" \
-            "get gpu status."
-
-        [[ "$(abcli_keyword_is $2 verbose)" == true ]] &&
-            python3 -m abcli.plugins.gpu --help
-
-        return
-    fi
 
     if [ $task == "get" ]; then
         local options=$2
@@ -73,7 +53,7 @@ function abcli_gpu_status() {
         return
     fi
 
-    abcli_log_error "-abcli: gpu: status: $task: command not found."
+    abcli_log_error "@gpu: status: $task: command not found."
     return 1
 }
 
