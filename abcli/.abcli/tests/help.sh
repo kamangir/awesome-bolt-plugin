@@ -24,7 +24,7 @@ function test_abcli_help() {
         \
         "@gpu status get" \
         "@gpu status show" \
-        "@gpu status validate" \
+        "@gpu validate" \
         \
         "abcli"; do
         abcli_eval ,$options \
