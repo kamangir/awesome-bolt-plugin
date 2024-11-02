@@ -4,6 +4,7 @@ from blue_options.terminal import show_usage, xtra
 
 from abcli.help.cp import help_cp
 from abcli.help.download import help_download
+from abcli.help.gif import help_gif
 from abcli.help.git import help_functions as help_git
 from abcli.help.gpu import help_functions as help_gpu
 from abcli.help.log import help_functions as help_log
@@ -14,6 +15,7 @@ from abcli.help.pytest import help_pytest
 help_functions = {
     "cp": help_cp,
     "download": help_download,
+    "gif": help_gif,
     "git": help_git,
     "gpu": help_gpu,
     "log": help_log,
