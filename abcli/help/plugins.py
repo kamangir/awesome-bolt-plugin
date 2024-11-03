@@ -1,6 +1,6 @@
 from typing import List
 
-from blue_options.terminal import show_usage, xtra
+from blue_options.terminal import show_usage
 
 
 def help_get_module_name(
@@ -22,8 +22,6 @@ def help_install(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "actions|repo"
-
     return show_usage(
         [
             "@plugins",
@@ -67,8 +65,6 @@ def help_transform(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "actions|repo"
-
     return show_usage(
         [
             "@plugins",
