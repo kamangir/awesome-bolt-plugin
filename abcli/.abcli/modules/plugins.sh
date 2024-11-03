@@ -4,19 +4,14 @@ function abcli_plugins() {
     local task=$(abcli_unpack_keyword "$1")
 
     if [ "$task" == "help" ]; then
-        abcli_plugins_install "$@"
-
         abcli_show_usage "@plugins get_module_name$ABCUL<repo-name>" \
-            "get module name."
+            "get module name for <repo-name>."
 
         abcli_show_usage "@plugins list_of_external" \
             "show list of external plugins."
 
         abcli_show_usage "@plugins list_of_installed" \
             "show list of installed plugins."
-
-        abcli_plugins_transform "$@"
-
         return 0
     fi
 

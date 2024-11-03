@@ -48,5 +48,4 @@ function abcli_plugins_transform() {
     echo "# $plugin_name" >README.md
 
     popd >/dev/null
-
 }
