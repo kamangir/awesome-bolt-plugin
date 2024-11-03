@@ -28,6 +28,12 @@ function test_abcli_help() {
         \
         "@init" \
         \
+        "@plugins get_module_name" \
+        "@plugins install" \
+        "@plugins list_of_external" \
+        "@plugins list_of_installed" \
+        "@plugins transform" \
+        \
         "@terraform" \
         "@terraform cat" \
         "@terraform disable" \

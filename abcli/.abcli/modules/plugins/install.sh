@@ -3,15 +3,9 @@
 function abcli_plugins_install() {
     local plugin_name=$(abcli_unpack_keyword "$1")
 
-    if [[ "$plugin_name" == help ]]; then
-        abcli_show_usage "@plugins install$ABCUL<plugin-name>" \
-            "install <plugin-name>."
-        return
-    fi
-
     local repo_name=$(abcli_get_repo_name_from_plugin $plugin_name)
     if [[ -z "$repo_name" ]]; then
-        abcli_log_error "-@plugins: install: $plugin_name: plugin not found."
+        abcli_log_error "@plugins: install: $plugin_name: plugin not found."
         return 1
     fi
 

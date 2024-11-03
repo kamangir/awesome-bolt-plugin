@@ -1,17 +1,9 @@
 #! /usr/bin/env bash
 
 function abcli_plugins_transform() {
-    local plugin_name=$(abcli_unpack_keyword "$1")
-
-    if [[ "$plugin_name" == help ]]; then
-        abcli_show_usage "@plugins transform$ABCUL<repo-name>" \
-            "transform a blue-plugin git clone to <repo-name>."
-        return
-    fi
-
     local repo_name=$1
     if [[ -z "$repo_name" ]]; then
-        abcli_log_error "-@plugins: transform: $repo_name: repo not found."
+        abcli_log_error "@plugins: transform: $repo_name: repo not found."
         return 1
     fi
     local plugin_name=$(abcli_plugin_name_from_repo $repo_name)
