@@ -3,6 +3,7 @@
 alias @=abcli
 
 alias @T=abcli_terraform
+alias @terraform=abcli_terraform
 
 alias @act=abcli_perform_action
 alias @action=abcli_perform_action

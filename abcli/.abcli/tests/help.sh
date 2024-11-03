@@ -28,6 +28,11 @@ function test_abcli_help() {
         \
         "@init" \
         \
+        "@terraform" \
+        "@terraform cat" \
+        "@terraform disable" \
+        "@terraform enable" \
+        \
         "abcli"; do
         abcli_eval ,$options \
             abcli_help $module

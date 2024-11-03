@@ -3,18 +3,6 @@
 function abcli_terraform() {
     local task=$(abcli_unpack_keyword $1)
 
-    if [ "$task" == "help" ]; then
-        abcli_show_usage "abcli terraform" \
-            "terraform this machine."
-        abcli_show_usage "abcli terraform cat" \
-            "cat terraform files."
-        abcli_show_usage "abcli terraform disable" \
-            "disable terraform."
-        abcli_show_usage "abcli terraform enable" \
-            "enable terraform."
-        return
-    fi
-
     if [ "$task" == "cat" ]; then
 
         if [[ "$abcli_is_mac" == true ]]; then
@@ -57,7 +45,9 @@ function abcli_terraform() {
         return
     fi
 
-    if [[ "$abcli_is_headless" == false ]] && [[ "$abcli_is_mac" == false ]] && [[ "$abcli_is_docker" == false ]]; then
+    if [[ "$abcli_is_headless" == false ]] &&
+        [[ "$abcli_is_mac" == false ]] &&
+        [[ "$abcli_is_docker" == false ]]; then
         rm $abcli_path_ignore/background*
         local background_image=$abcli_path_ignore/background-$(abcli_string_timestamp).jpg
 

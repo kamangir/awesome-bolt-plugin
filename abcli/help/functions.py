@@ -1,7 +1,3 @@
-from typing import List
-
-from blue_options.terminal import show_usage, xtra
-
 from abcli.help.cp import help_cp
 from abcli.help.download import help_download
 from abcli.help.gif import help_gif
@@ -13,6 +9,7 @@ from abcli.help.metadata import help_functions as help_metadata
 from abcli.help.mlflow import help_functions as help_mlflow
 from abcli.help.notebooks import help_functions as help_notebooks
 from abcli.help.pytest import help_pytest
+from abcli.help.terraform import help_functions as help_terraform
 
 
 help_functions = {
@@ -27,4 +24,5 @@ help_functions = {
     "mlflow": help_mlflow,
     "notebooks": help_notebooks,
     "pytest": help_pytest,
+    "terraform": help_terraform,
 }
