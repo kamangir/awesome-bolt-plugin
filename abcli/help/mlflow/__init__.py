@@ -29,8 +29,6 @@ def help_get_id(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "actions|repo"
-
     return show_usage(
         [
             "@mlflow",
@@ -82,8 +80,6 @@ def help_log_artifacts(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "actions|repo"
-
     args = ["[--model_name <model-name>]"]
 
     return show_usage(
@@ -132,8 +128,6 @@ def help_run(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "actions|repo"
-
     return show_usage(
         [
             "@mlflow",
