@@ -172,7 +172,7 @@ def help_transition(
         ],
         "transition <model-name>.",
         {
-            "stage: {}".format(" | ".join(env.ABCLI_MLFLOW_STAGES.split(","))): "",
+            "stage: {}".format(" | ".join(env.ABCLI_MLFLOW_STAGES.split("|"))): "",
         },
         mono=mono,
     )
