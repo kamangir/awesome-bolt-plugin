@@ -1,15 +1,8 @@
 #! /usr/bin/env bash
 
 function abcli_init() {
-    local task=$(abcli_unpack_keyword $1)
-
-    if [ "$task" == "help" ]; then
-        abcli_show_usage "abcli init [<plugin-name>] [clear,~terraform]" \
-            "init [<plugin-name>]."
-        return
-    fi
-
     local plugin_name=$(abcli_clarify_input "$1" all)
+
     local options=$2
 
     local current_path=$(pwd)

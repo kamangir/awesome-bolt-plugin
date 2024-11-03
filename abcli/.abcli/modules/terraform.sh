@@ -12,10 +12,6 @@ function abcli_terraform() {
             "disable terraform."
         abcli_show_usage "abcli terraform enable" \
             "enable terraform."
-
-        if [ "$(abcli_keyword_is $2 verbose)" == true ]; then
-            python3 -m abcli.modules.terraform --help
-        fi
         return
     fi
 
