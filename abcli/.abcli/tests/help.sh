@@ -43,6 +43,10 @@ function test_abcli_help() {
         \
         "@init" \
         \
+        "@latex" \
+        "@latex build" \
+        "@latex install" \
+        \
         "@plugins get_module_name" \
         "@plugins install" \
         "@plugins list_of_external" \
