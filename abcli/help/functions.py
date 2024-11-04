@@ -1,4 +1,5 @@
 from abcli.help.cp import help_cp
+from abcli.help.docker import help_functions as help_docker
 from abcli.help.download import help_download
 from abcli.help.gif import help_gif
 from abcli.help.git import help_functions as help_git
@@ -15,6 +16,7 @@ from abcli.help.terraform import help_functions as help_terraform
 
 help_functions = {
     "cp": help_cp,
+    "docker": help_docker,
     "download": help_download,
     "gif": help_gif,
     "git": help_git,

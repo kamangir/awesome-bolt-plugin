@@ -5,6 +5,15 @@ function test_abcli_help() {
 
     local module
     for module in \
+        "@docker browse " \
+        "@docker build " \
+        "@docker clear " \
+        "@docker eval " \
+        "@docker push " \
+        "@docker run " \
+        "@docker seed " \
+        "@docker source " \
+        \
         "@git" \
         "@git browse" \
         "@git checkout" \
