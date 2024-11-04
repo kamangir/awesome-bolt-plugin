@@ -73,8 +73,6 @@ def help_push(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "actions|repo"
-
     return show_usage(
         [
             "@docker",
