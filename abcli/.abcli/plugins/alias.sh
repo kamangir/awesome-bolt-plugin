@@ -9,6 +9,8 @@ alias @act=abcli_perform_action
 alias @action=abcli_perform_action
 alias @perform_action=abcli_perform_action
 
+alias @batch=abcli_aws_batch
+
 alias @build_README=abcli_build_README
 
 alias @conda=abcli_conda
