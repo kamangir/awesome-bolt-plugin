@@ -106,15 +106,12 @@ def help_seed(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "actions|repo"
-
     return show_usage(
         [
-            "@plugin",
-            "browse",
-            f"[{options}]",
+            "@docker",
+            "seed",
         ],
-        "browse blue_plugin.",
+        "seed docker 🌱.",
         mono=mono,
     )
 

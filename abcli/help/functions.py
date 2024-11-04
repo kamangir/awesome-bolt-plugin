@@ -1,3 +1,4 @@
+from abcli.help.aws_batch import help_functions as help_aws_batch
 from abcli.help.cp import help_cp
 from abcli.help.docker import help_functions as help_docker
 from abcli.help.download import help_download
@@ -15,6 +16,7 @@ from abcli.help.terraform import help_functions as help_terraform
 
 
 help_functions = {
+    "aws_batch": help_aws_batch,
     "cp": help_cp,
     "docker": help_docker,
     "download": help_download,

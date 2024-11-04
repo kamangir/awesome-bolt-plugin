@@ -5,6 +5,12 @@ function test_abcli_help() {
 
     local module
     for module in \
+        "@batch browse" \
+        "@batch cat" \
+        "@batch eval" \
+        "@batch list" \
+        "@batch submit" \
+        \
         "@docker browse " \
         "@docker build " \
         "@docker clear " \
