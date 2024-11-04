@@ -14,7 +14,9 @@ from abcli.help.notebooks import help_functions as help_notebooks
 from abcli.help.plugins import help_functions as help_plugins
 from abcli.help.pytest import help_pytest
 from abcli.help.sagemaker import help_functions as help_sagemaker
+from abcli.help.sleep import help_sleep
 from abcli.help.terraform import help_functions as help_terraform
+from abcli.help.watch import help_watch
 
 
 help_functions = {
@@ -34,5 +36,7 @@ help_functions = {
     "plugins": help_plugins,
     "pytest": help_pytest,
     "sagemaker": help_sagemaker,
+    "sleep": help_sleep,
     "terraform": help_terraform,
+    "watch": help_watch,
 }
