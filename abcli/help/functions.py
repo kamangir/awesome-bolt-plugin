@@ -2,6 +2,7 @@ from abcli.help.aws_batch import help_functions as help_aws_batch
 from abcli.help.cp import help_cp
 from abcli.help.docker import help_functions as help_docker
 from abcli.help.download import help_download
+from abcli.help.eval import help_eval
 from abcli.help.gif import help_gif
 from abcli.help.git import help_functions as help_git
 from abcli.help.gpu import help_functions as help_gpu
@@ -13,6 +14,7 @@ from abcli.help.mlflow import help_functions as help_mlflow
 from abcli.help.notebooks import help_functions as help_notebooks
 from abcli.help.plugins import help_functions as help_plugins
 from abcli.help.pytest import help_pytest
+from abcli.help.repeat import help_repeat
 from abcli.help.sagemaker import help_functions as help_sagemaker
 from abcli.help.sleep import help_sleep
 from abcli.help.terraform import help_functions as help_terraform
@@ -24,6 +26,7 @@ help_functions = {
     "cp": help_cp,
     "docker": help_docker,
     "download": help_download,
+    "eval": help_eval,
     "gif": help_gif,
     "git": help_git,
     "gpu": help_gpu,
@@ -35,6 +38,7 @@ help_functions = {
     "notebooks": help_notebooks,
     "plugins": help_plugins,
     "pytest": help_pytest,
+    "repeat": help_repeat,
     "sagemaker": help_sagemaker,
     "sleep": help_sleep,
     "terraform": help_terraform,

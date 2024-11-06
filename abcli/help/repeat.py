@@ -1,25 +1,27 @@
 from typing import List
 
-from blue_options.terminal import show_usage, xtra
+from blue_options.terminal import show_usage
+
+from abcli.help.eval import options as eval_options
 
 
-def help_watch(
+def help_repeat(
     tokens: List[str],
     mono: bool,
 ) -> str:
     options = "".join(
         [
-            xtra("~clear,dryrun,", mono=mono),
-            "seconds=<seconds>",
+            "count=<count>,",
+            eval_options(mono=mono),
         ]
     )
 
     return show_usage(
         [
-            "@watch",
+            "@repeat",
             f"[{options}]",
             "<command-line>",
         ],
-        "watch <command-line>.",
+        "repeat <command-line>.",
         mono=mono,
     )
