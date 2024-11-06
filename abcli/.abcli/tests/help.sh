@@ -53,14 +53,14 @@ function test_abcli_help() {
         "@plugins list_of_installed" \
         "@plugins transform" \
         \
-        "@sleep" \
+        "abcli_sleep" \
         \
         "@terraform" \
         "@terraform cat" \
         "@terraform disable" \
         "@terraform enable" \
         \
-        "@watch" \
+        "abcli_watch" \
         \
         "abcli"; do
         abcli_eval ,$options \

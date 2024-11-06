@@ -45,14 +45,10 @@ alias @random=abcli_string_random
 
 alias @seed=abcli_seed
 
-alias @sleep=abcli_sleep
-
 alias @ssm=abcli_ssm
 
 alias @storage=abcli_storage
 
 alias @version="abcli version"
-
-alias @watch=abcli_watch
 
 alias @wifi=abcli_wifi
