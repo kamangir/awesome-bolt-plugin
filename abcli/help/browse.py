@@ -7,8 +7,6 @@ def help_browse(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "actions|repo"
-
     return show_usage(
         [
             "@browse",
