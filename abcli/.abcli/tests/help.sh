@@ -22,6 +22,19 @@ function test_abcli_help() {
         "@docker seed " \
         "@docker source " \
         \
+        "@env" \
+        "@env backup" \
+        "@env backup list" \
+        "@env dot" \
+        "@env dot cat" \
+        "@env dot cat" \
+        "@env dot cp" \
+        "@env dot edit" \
+        "@env dot get" \
+        "@env dot list" \
+        "@env dot load" \
+        "@env dot set" \
+        \
         "@git" \
         "@git browse" \
         "@git checkout" \

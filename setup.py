@@ -10,6 +10,7 @@ setup(
     packages=[
         NAME,
         f"{NAME}.help",
+        f"{NAME}.help.env",
         f"{NAME}.help.mlflow",
         f"{NAME}.keywords",
         f"{NAME}.modules",

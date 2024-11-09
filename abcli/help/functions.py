@@ -3,6 +3,7 @@ from abcli.help.browse import help_browse
 from abcli.help.cp import help_cp
 from abcli.help.docker import help_functions as help_docker
 from abcli.help.download import help_download
+from abcli.help.env import help_functions as help_env
 from abcli.help.eval import help_eval
 from abcli.help.gif import help_gif
 from abcli.help.git import help_functions as help_git
@@ -30,6 +31,7 @@ help_functions = {
     "cp": help_cp,
     "docker": help_docker,
     "download": help_download,
+    "env": help_env,
     "eval": help_eval,
     "gif": help_gif,
     "git": help_git,
