@@ -11,6 +11,8 @@ function test_abcli_help() {
         "@batch list" \
         "@batch submit" \
         \
+        "@browse" \
+        \
         "@docker browse " \
         "@docker build " \
         "@docker clear " \

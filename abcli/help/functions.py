@@ -1,4 +1,5 @@
 from abcli.help.aws_batch import help_functions as help_aws_batch
+from abcli.help.browse import help_browse
 from abcli.help.cp import help_cp
 from abcli.help.docker import help_functions as help_docker
 from abcli.help.download import help_download
@@ -25,6 +26,7 @@ from abcli.help.watch import help_watch
 
 help_functions = {
     "aws_batch": help_aws_batch,
+    "browse": help_browse,
     "cp": help_cp,
     "docker": help_docker,
     "download": help_download,
