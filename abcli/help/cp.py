@@ -7,7 +7,14 @@ def help_cp(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "cp,~download,~relate,~tags,upload"
+    options = "".join(
+        [
+            xtra("cp,~download,", mono=mono),
+            "~relate",
+            xtra(",~tags,", mono=mono),
+            "upload",
+        ]
+    )
 
     return show_usage(
         [
