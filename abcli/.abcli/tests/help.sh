@@ -5,6 +5,13 @@ function test_abcli_help() {
 
     local module
     for module in \
+        "@pypi" \
+        "@pypi browse" \
+        "@pypi build" \
+        "@pypi install" \
+        \
+        "@pytest" \
+        \
         "@batch browse" \
         "@batch cat" \
         "@batch eval" \

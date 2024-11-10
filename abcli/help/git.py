@@ -3,6 +3,8 @@ from typing import List
 
 from blue_options.terminal import show_usage, xtra
 
+from abcli.help.pypi import build_options as pypi_build_options
+
 
 def help(
     tokens: List[str],
@@ -198,7 +200,7 @@ def help_push(
         ]
     )
 
-    build_options = "build,{}".format(os.getenv("abcli_pypi_build_options"))
+    build_options = f"build,{pypi_build_options}"
 
     return show_usage(
         [

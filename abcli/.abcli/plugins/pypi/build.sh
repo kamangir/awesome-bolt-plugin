@@ -1,21 +1,9 @@
 #! /usr/bin/env bash
 
-export abcli_pypi_build_options="browse,install,~rm_dist,~upload"
-
 function abcli_pypi_build() {
     local options=$1
 
     local plugin_name=$(abcli_option "$options" plugin abcli)
-
-    if [ $(abcli_option_int "$options" help 0) == 1 ]; then
-        local callable=$([[ "$plugin_name" == "abcli" ]] && echo "@" || echo "$plugin_name ")
-        options="${EOP}$abcli_pypi_build_options$EOPE"
-        [[ "$plugin_name" == abcli ]] && options="$options$EOP,plugin=<plugin-name>$EOPE"
-        abcli_show_usage "${callable}pypi build$ABCUL$options" \
-            "$plugin_name -> pypi."
-        return
-    fi
-
     local do_install=$(abcli_option_int "$options" install 0)
     local do_upload=$(abcli_option_int "$options" upload 1)
     local do_browse=$(abcli_option_int "$options" browse 0)
