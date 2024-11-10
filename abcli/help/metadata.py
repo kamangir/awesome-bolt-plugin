@@ -55,6 +55,7 @@ def help_get(
             "@metadata",
             "get",
             f"[{options}]",
+            "<path>",
         ],
         "get <path>/metadata[<key>]",
         mono=mono,
