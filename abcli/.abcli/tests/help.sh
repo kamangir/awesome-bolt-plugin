@@ -77,6 +77,10 @@ function test_abcli_help() {
         \
         "@repeat" \
         \
+        "@seed" \
+        "@seed eject" \
+        "@seed list" \
+        \
         "@sleep" \
         \
         "@terraform" \
