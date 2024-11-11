@@ -34,6 +34,20 @@ function test_abcli_list_nonempty() {
         this,that
 }
 
+function test_abcli_list_next() {
+    abcli_assert \
+        $(abcli_list_next what what,which,this,that,something) \
+        which
+
+    abcli_assert \
+        $(abcli_list_next this what,which,this,that,something) \
+        that
+
+    abcli_assert \
+        $(abcli_list_next what what,which,this,that,something) \
+        something - empty
+}
+
 function test_abcli_list_resize() {
     abcli_assert \
         $(abcli_list_resize this,that,which 2) \
