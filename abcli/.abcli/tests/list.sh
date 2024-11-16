@@ -44,8 +44,30 @@ function test_abcli_list_next() {
         that
 
     abcli_assert \
-        $(abcli_list_next what what,which,this,that,something) \
-        something - empty
+        "$(abcli_list_next something what,which,this,that,something)" \
+        - empty
+
+    abcli_assert \
+        "$(abcli_list_next void what,which,this,that,something)" \
+        - empty
+}
+
+function test_abcli_list_prev() {
+    abcli_assert \
+        "$(abcli_list_prev what what,which,this,that,something)" \
+        - empty
+
+    abcli_assert \
+        $(abcli_list_prev this what,which,this,that,something) \
+        which
+
+    abcli_assert \
+        $(abcli_list_prev something what,which,this,that,something) \
+        that
+
+    abcli_assert \
+        "$(abcli_list_prev void what,which,this,that,something)" \
+        - empty
 }
 
 function test_abcli_list_resize() {
