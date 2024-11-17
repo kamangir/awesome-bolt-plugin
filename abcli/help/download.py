@@ -7,7 +7,12 @@ def help_download(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "filename=<filename>"
+    options = "".join(
+        [
+            "filename=<filename>",
+            xtra(",overwrite", mono=mono),
+        ]
+    )
 
     open_options = "open,QGIS"
 
