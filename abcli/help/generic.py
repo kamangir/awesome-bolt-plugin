@@ -1,7 +1,8 @@
 from typing import List, Dict, Callable, Union
 
-from abcli.help.pytest import help_pytest
 from abcli.help.pypi import help_functions as help_pypi
+from abcli.help.pytest import help_pytest
+from abcli.help.test import help_functions as help_test
 
 
 def help_functions(
@@ -14,4 +15,5 @@ def help_functions(
             mono=mono,
             plugin_name=plugin_name,
         ),
+        "test": help_test(plugin_name=plugin_name),
     }

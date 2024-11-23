@@ -18,8 +18,6 @@ from abcli.help.mlflow import help_functions as help_mlflow
 from abcli.help.notebooks import help_functions as help_notebooks
 from abcli.help.plugins import help_functions as help_plugins
 from abcli.help.open import help_open
-from abcli.help.pypi import help_functions as help_pypi
-from abcli.help.pytest import help_pytest
 from abcli.help.repeat import help_repeat
 from abcli.help.sagemaker import help_functions as help_sagemaker
 from abcli.help.seed import help_functions as help_seed
