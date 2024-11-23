@@ -83,6 +83,9 @@ function test_abcli_help() {
         \
         "@sleep" \
         \
+        "@test" \
+        "@test list" \
+        \
         "@terraform" \
         "@terraform cat" \
         "@terraform disable" \
