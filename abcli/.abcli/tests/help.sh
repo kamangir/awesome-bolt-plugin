@@ -99,6 +99,9 @@ function test_abcli_help() {
         \
         "@watch" \
         \
+        "abcli_source_caller_suffix_path" \
+        "abcli_source_path" \
+        \
         "abcli"; do
         abcli_eval ,$options \
             abcli_help $module

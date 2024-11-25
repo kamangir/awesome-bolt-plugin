@@ -23,6 +23,10 @@ from abcli.help.repeat import help_repeat
 from abcli.help.sagemaker import help_functions as help_sagemaker
 from abcli.help.seed import help_functions as help_seed
 from abcli.help.sleep import help_sleep
+from abcli.help.source import (
+    help_source_caller_suffix_path,
+    help_source_path,
+)
 from abcli.help.terminal import help_badge
 from abcli.help.terraform import help_functions as help_terraform
 from abcli.help.upload import help_upload
@@ -33,6 +37,8 @@ help_functions = generic_help_functions(plugin_name="abcli")
 
 help_functions.update(
     {
+        "source_caller_suffix_path": help_source_caller_suffix_path,
+        "source_path": help_source_path,
         "aws_batch": help_aws_batch,
         "badge": help_badge,
         "browse": help_browse,
