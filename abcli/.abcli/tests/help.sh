@@ -5,13 +5,6 @@ function test_abcli_help() {
 
     local module
     for module in \
-        "@pypi" \
-        "@pypi browse" \
-        "@pypi build" \
-        "@pypi install" \
-        \
-        "@pytest" \
-        \
         "@batch browse" \
         "@batch cat" \
         "@batch eval" \
@@ -74,6 +67,15 @@ function test_abcli_help() {
         "@plugins list_of_external" \
         "@plugins list_of_installed" \
         "@plugins transform" \
+        \
+        "@pylint" \
+        \
+        "@pypi" \
+        "@pypi browse" \
+        "@pypi build" \
+        "@pypi install" \
+        \
+        "@pytest" \
         \
         "@repeat" \
         \
