@@ -31,6 +31,27 @@ def help_log(
     )
 
 
+def help_log_list(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    args = [
+        '[--before "list of"]',
+        '[--after "items(s)"]',
+        "[--delim space | <delim>]",
+    ]
+
+    return show_usage(
+        [
+            "abcli_log_list",
+            "<this,that>",
+        ]
+        + args,
+        "log list.",
+        mono=mono,
+    )
+
+
 def help_log_verbose(
     tokens: List[str],
     mono: bool,
@@ -50,5 +71,6 @@ def help_log_verbose(
 
 help_functions = {
     "": help_log,
+    "list": help_log_list,
     "verbose": help_log_verbose,
 }

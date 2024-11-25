@@ -101,6 +101,7 @@ function test_abcli_help() {
         \
         "@watch" \
         \
+        "abcli_log_list" \
         "abcli_source_caller_suffix_path" \
         "abcli_source_path" \
         \
