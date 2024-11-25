@@ -66,6 +66,8 @@ function test_abcli_help() {
         "@latex build" \
         "@latex install" \
         \
+        "@ls" \
+        \
         "@pause" \
         \
         "@plugins get_module_name" \

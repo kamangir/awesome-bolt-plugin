@@ -14,6 +14,7 @@ from abcli.help.init import help_init
 from abcli.help.latex import help_functions as help_latex
 from abcli.help.logging import help_cat, help_log_list
 from abcli.help.logging import help_functions as help_log
+from abcli.help.ls import help_ls
 from abcli.help.metadata import help_functions as help_metadata
 from abcli.help.mlflow import help_functions as help_mlflow
 from abcli.help.notebooks import help_functions as help_notebooks
@@ -53,6 +54,7 @@ help_functions.update(
         "init": help_init,
         "latex": help_latex,
         "log": help_log,
+        "ls": help_ls,
         "metadata": help_metadata,
         "mlflow": help_mlflow,
         "notebooks": help_notebooks,
