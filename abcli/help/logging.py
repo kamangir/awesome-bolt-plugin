@@ -3,6 +3,20 @@ from typing import List
 from blue_options.terminal import show_usage, xtra
 
 
+def help_cat(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    return show_usage(
+        [
+            "@cat",
+            "<filename>",
+        ],
+        "cat <filename>.",
+        mono=mono,
+    )
+
+
 def help_log(
     tokens: List[str],
     mono: bool,

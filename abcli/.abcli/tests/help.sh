@@ -15,6 +15,8 @@ function test_abcli_help() {
         \
         "@browse" \
         \
+        "@cat" \
+        \
         "@docker browse " \
         "@docker build " \
         "@docker clear " \

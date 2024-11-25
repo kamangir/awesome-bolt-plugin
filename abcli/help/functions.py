@@ -12,7 +12,8 @@ from abcli.help.git import help_functions as help_git
 from abcli.help.gpu import help_functions as help_gpu
 from abcli.help.init import help_init
 from abcli.help.latex import help_functions as help_latex
-from abcli.help.log import help_functions as help_log
+from abcli.help.logging import help_cat
+from abcli.help.logging import help_functions as help_log
 from abcli.help.metadata import help_functions as help_metadata
 from abcli.help.mlflow import help_functions as help_mlflow
 from abcli.help.notebooks import help_functions as help_notebooks
@@ -37,11 +38,10 @@ help_functions = generic_help_functions(plugin_name="abcli")
 
 help_functions.update(
     {
-        "source_caller_suffix_path": help_source_caller_suffix_path,
-        "source_path": help_source_path,
         "aws_batch": help_aws_batch,
         "badge": help_badge,
         "browse": help_browse,
+        "cat": help_cat,
         "cp": help_cp,
         "docker": help_docker,
         "download": help_download,
@@ -63,6 +63,8 @@ help_functions.update(
         "sagemaker": help_sagemaker,
         "seed": help_seed,
         "sleep": help_sleep,
+        "source_caller_suffix_path": help_source_caller_suffix_path,
+        "source_path": help_source_path,
         "terraform": help_terraform,
         "upload": help_upload,
         "watch": help_watch,
