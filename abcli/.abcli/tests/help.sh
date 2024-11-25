@@ -5,6 +5,8 @@ function test_abcli_help() {
 
     local module
     for module in \
+        "@badge" \
+        \
         "@batch browse" \
         "@batch cat" \
         "@batch eval" \

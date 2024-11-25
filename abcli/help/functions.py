@@ -22,6 +22,7 @@ from abcli.help.repeat import help_repeat
 from abcli.help.sagemaker import help_functions as help_sagemaker
 from abcli.help.seed import help_functions as help_seed
 from abcli.help.sleep import help_sleep
+from abcli.help.terminal import help_badge
 from abcli.help.terraform import help_functions as help_terraform
 from abcli.help.upload import help_upload
 from abcli.help.watch import help_watch
@@ -32,6 +33,7 @@ help_functions = generic_help_functions(plugin_name="abcli")
 help_functions.update(
     {
         "aws_batch": help_aws_batch,
+        "badge": help_badge,
         "browse": help_browse,
         "cp": help_cp,
         "docker": help_docker,
