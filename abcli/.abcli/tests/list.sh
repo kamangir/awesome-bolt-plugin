@@ -94,6 +94,16 @@ function test_abcli_list_resize() {
     abcli_assert \
         $(abcli_list_resize this,that,which 2) \
         this,that
+    [[ $? -ne 0 ]] && return 1
+
+    abcli_assert \
+        $(abcli_list_resize this,that,which -1) \
+        this,that,which
+    [[ $? -ne 0 ]] && return 1
+
+    abcli_assert \
+        "$(abcli_list_resize this,that,which 0)" \
+        - empty
 }
 
 function test_abcli_list_sort() {

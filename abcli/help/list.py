@@ -207,7 +207,7 @@ def help_list_resize(
             "@list",
             "resize",
             f"{example_list}",
-            "<length>",
+            "-1 | <length>",
         ]
         + args,
         "resize list.",
