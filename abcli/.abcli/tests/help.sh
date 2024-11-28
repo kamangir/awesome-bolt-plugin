@@ -66,6 +66,19 @@ function test_abcli_help() {
         "@latex build" \
         "@latex install" \
         \
+        "@list" \
+        "@list filter" \
+        "@list in" \
+        "@list intersect " \
+        "@list item" \
+        "@list len " \
+        "@list log " \
+        "@list next" \
+        "@list nonempty" \
+        "@list prev" \
+        "@list resize" \
+        "@list sort" \
+        \
         "@ls" \
         \
         "@pause" \
