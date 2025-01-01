@@ -1,10 +1,14 @@
 #! /usr/bin/env bash
 
 function abcli_latex_install() {
-    if [[ "$abcli_is_mac" == true ]]; then
-        brew install bibclean
+    local options=$1
 
-        brew install --cask mactex
+    if [[ "$abcli_is_mac" == true ]]; then
+        abcli_eval ,$options \
+            brew install bibclean
+
+        abcli_eval ,$options \
+            brew install --cask mactex
 
         abcli_log_warning "restart the terminal..."
         return

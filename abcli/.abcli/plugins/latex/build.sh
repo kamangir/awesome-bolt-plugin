@@ -2,16 +2,14 @@
 
 function abcli_latex_build() {
     local options=$1
-
     local do_dryrun=$(abcli_option_int "$options" dryrun 0)
-    local do_bibclean$(abcli_option_int "$options" bibclean 0)
     local do_install=$(abcli_option_int "$options" install 0)
     local do_ps=$(abcli_option_int "$options" ps 1)
     local do_pdf=$(abcli_option_int "$options" pdf 1)
     local bib_file=$(abcli_option "$options" bib)
 
     [[ "$do_install" == 1 ]] &&
-        abcli_latex install
+        abcli_latex_install $options
 
     local full_path=$2
     if [[ ! -f "$full_path" ]]; then

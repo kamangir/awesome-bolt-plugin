@@ -63,6 +63,7 @@ function test_abcli_help() {
         "@init" \
         \
         "@latex" \
+        "@latex bibclean" \
         "@latex build" \
         "@latex install" \
         \
