@@ -14,9 +14,9 @@ def help_bibclean(
             "@latex",
             "bibclean",
             f"[{options}]",
-            "<filename.bib>",
+            "<path/filename.bib>",
         ],
-        "bibclean <filename.bib>.",
+        "bibclean <path/filename.bib>.",
         mono=mono,
     )
 
