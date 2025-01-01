@@ -7,7 +7,7 @@ def build_options(mono: bool):
     return "".join(
         [
             "bib=<name>",
-            xtra(",dryrun,install,~ps,~pdf", mono=mono),
+            xtra(",bibclean,dryrun,install,~ps,~pdf", mono=mono),
         ]
     )
 
