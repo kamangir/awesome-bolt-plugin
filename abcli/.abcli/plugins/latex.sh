@@ -9,7 +9,7 @@ function abcli_latex() {
         return
     fi
 
-    abcli_log_error "-@latex: $task: command not found."
+    abcli_log_error "@latex: $task: command not found."
     return 1
 }
 
