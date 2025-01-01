@@ -7,8 +7,12 @@ function abcli_latex_bibclean() {
     [[ "$do_install" == 1 ]] &&
         abcli_latex_install $options
 
-    local filename=$2
+    local filename=${2:-void}
+
+    local temp_filename=$abcli_path_temp/bibclean-$(abcli_string_timestamp_short).bib
 
     abcli_eval ,$options \
-        bibclean $filename
+        bibclean $filename >$temp_filename
+
+    mv -v $temp_filename $filename
 }
