@@ -15,6 +15,8 @@ function test_abcli_help() {
         \
         "@browse" \
         \
+        "@build_README" \
+        \
         "@cat" \
         \
         "@docker browse " \
