@@ -1,6 +1,6 @@
 from typing import List
 
-from blue_options.terminal import show_usage, xtra
+from blue_options.terminal import show_usage
 
 
 def help_get(
@@ -35,8 +35,6 @@ def help_put(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "actions|repo"
-
     return "\n".join(
         [
             show_usage(
@@ -76,8 +74,6 @@ def help_rm(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "actions|repo"
-
     return show_usage(
         [
             "@ssm",
