@@ -105,6 +105,8 @@ function test_abcli_help() {
         "@seed eject" \
         "@seed list" \
         \
+        "@select" \
+        \
         "@sleep" \
         \
         "@test" \

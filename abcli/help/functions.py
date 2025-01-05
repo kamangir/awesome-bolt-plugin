@@ -25,6 +25,7 @@ from abcli.help.pause import help_pause
 from abcli.help.repeat import help_repeat
 from abcli.help.sagemaker import help_functions as help_sagemaker
 from abcli.help.seed import help_functions as help_seed
+from abcli.help.select import help_select
 from abcli.help.sleep import help_sleep
 from abcli.help.source import (
     help_source_caller_suffix_path,
@@ -66,6 +67,7 @@ help_functions.update(
         "repeat": help_repeat,
         "sagemaker": help_sagemaker,
         "seed": help_seed,
+        "select": help_select,
         "sleep": help_sleep,
         "source_caller_suffix_path": help_source_caller_suffix_path,
         "source_path": help_source_path,
