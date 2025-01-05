@@ -20,6 +20,7 @@ from abcli.help.ls import help_ls
 from abcli.help.metadata import help_functions as help_metadata
 from abcli.help.mlflow import help_functions as help_mlflow
 from abcli.help.notebooks import help_functions as help_notebooks
+from abcli.help.actions import help_perform_action
 from abcli.help.plugins import help_functions as help_plugins
 from abcli.help.open import help_open
 from abcli.help.pause import help_pause
@@ -65,6 +66,7 @@ help_functions.update(
         "notebooks": help_notebooks,
         "open": help_open,
         "pause": help_pause,
+        "perform_action": help_perform_action,
         "plugins": help_plugins,
         "repeat": help_repeat,
         "sagemaker": help_sagemaker,
