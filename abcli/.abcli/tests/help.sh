@@ -135,7 +135,7 @@ function test_abcli_help() {
         "abcli_source_caller_suffix_path" \
         "abcli_source_path" \
         \
-        "blueness" \
+        "abcli_blueness" \
         \
         "abcli"; do
         abcli_eval ,$options \
