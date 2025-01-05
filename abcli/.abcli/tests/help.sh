@@ -84,6 +84,8 @@ function test_abcli_help() {
         \
         "@pause" \
         \
+        "@perform_action" \
+        \
         "@plugins get_module_name" \
         "@plugins install" \
         "@plugins list_of_external" \
@@ -117,11 +119,16 @@ function test_abcli_help() {
         "@terraform disable" \
         "@terraform enable" \
         \
+        "@trail" \
+        "@trail stop" \
+        \
         "@watch" \
         \
         "abcli_log_list" \
         "abcli_source_caller_suffix_path" \
         "abcli_source_path" \
+        \
+        "blueness" \
         \
         "abcli"; do
         abcli_eval ,$options \

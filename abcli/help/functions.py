@@ -1,5 +1,5 @@
 from abcli.help.generic import help_functions as generic_help_functions
-
+from abcli.help.actions import help_perform_action
 from abcli.help.aws_batch import help_functions as help_aws_batch
 from abcli.help.blueness import help_blueness
 from abcli.help.browse import help_browse
@@ -20,7 +20,7 @@ from abcli.help.ls import help_ls
 from abcli.help.metadata import help_functions as help_metadata
 from abcli.help.mlflow import help_functions as help_mlflow
 from abcli.help.notebooks import help_functions as help_notebooks
-from abcli.help.actions import help_perform_action
+from abcli.help.papertrail import help_functions as help_papertrail
 from abcli.help.plugins import help_functions as help_plugins
 from abcli.help.open import help_open
 from abcli.help.pause import help_pause
@@ -76,6 +76,7 @@ help_functions.update(
         "source_caller_suffix_path": help_source_caller_suffix_path,
         "source_path": help_source_path,
         "terraform": help_terraform,
+        "trail": help_papertrail,
         "upload": help_upload,
         "watch": help_watch,
     }
