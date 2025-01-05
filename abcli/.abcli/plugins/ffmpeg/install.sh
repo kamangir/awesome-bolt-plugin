@@ -30,6 +30,6 @@ function abcli_ffmpeg_install() {
         return
     fi
 
-    abcli_log_error "-@ffmpeg: install: instructions not found."
+    abcli_log_error "@ffmpeg: install: instructions not found."
     return 1
 }

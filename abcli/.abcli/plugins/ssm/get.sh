@@ -3,22 +3,13 @@
 function abcli_ssm_get() {
     local options=$1
 
-    if [ $(abcli_option_int "$options" help 0) == 1 ]; then
-        abcli_show_usage "@ssm get <secret-name>" \
-            "get <secret-name>"
-
-        abcli_show_usage "@ssm get path=<path>" \
-            "get <path>/sample.env secrets"
-        return
-    fi
-
     local secret_name
     local secret_value
 
     local path=$(abcli_option "$options" path)
     if [[ ! -z "$path" ]]; then
         if [[ ! -f "$path/sample.env" ]]; then
-            abcli_log_warning "-@ssm: get: $path/sample.env: file not found."
+            abcli_log_warning "@ssm: get: $path/sample.env: file not found."
             return 1
         fi
 

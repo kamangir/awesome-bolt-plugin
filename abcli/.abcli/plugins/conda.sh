@@ -32,7 +32,7 @@ function abcli_conda() {
                 "remove conda environment."
             ;;
         *)
-            abcli_log_error "-@conda: $task: command not found."
+            abcli_log_error "@conda: $task: command not found."
             return 1
             ;;
         esac

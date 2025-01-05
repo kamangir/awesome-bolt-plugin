@@ -14,7 +14,7 @@ function abcli_ffmpeg() {
         return
     fi
 
-    abcli_log_error "-@ffmpeg: $task: command not found."
+    abcli_log_error "@ffmpeg: $task: command not found."
     return 1
 }
 

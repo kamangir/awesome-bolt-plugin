@@ -113,6 +113,11 @@ function test_abcli_help() {
         \
         "@sleep" \
         \
+        "@ssm" \
+        "@ssm get" \
+        "@ssm put" \
+        "@ssm rm" \
+        \
         "@test" \
         "@test list" \
         \

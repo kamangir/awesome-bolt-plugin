@@ -33,6 +33,7 @@ from abcli.help.source import (
     help_source_caller_suffix_path,
     help_source_path,
 )
+from abcli.help.ssm import help_functions as help_ssm
 from abcli.help.terminal import help_badge
 from abcli.help.terraform import help_functions as help_terraform
 from abcli.help.upload import help_upload
@@ -75,6 +76,7 @@ help_functions.update(
         "sleep": help_sleep,
         "source_caller_suffix_path": help_source_caller_suffix_path,
         "source_path": help_source_path,
+        "ssm": help_ssm,
         "terraform": help_terraform,
         "trail": help_papertrail,
         "upload": help_upload,
