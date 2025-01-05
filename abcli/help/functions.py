@@ -1,6 +1,7 @@
 from abcli.help.generic import help_functions as generic_help_functions
 
 from abcli.help.aws_batch import help_functions as help_aws_batch
+from abcli.help.blueness import help_blueness
 from abcli.help.browse import help_browse
 from abcli.help.cp import help_cp
 from abcli.help.docker import help_functions as help_docker
@@ -43,6 +44,7 @@ help_functions.update(
     {
         "aws_batch": help_aws_batch,
         "badge": help_badge,
+        "blueness": help_blueness,
         "browse": help_browse,
         "cat": help_cat,
         "cp": help_cp,
