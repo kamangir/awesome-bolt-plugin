@@ -1,17 +1,9 @@
 #! /usr/bin/env bash
 
 function abcli_trail() {
-    local task=$(abcli_unpack_keyword "$1" help)
-
-    if [ "$task" == "help" ]; then
-        abcli_show_usage "abcli trail <filename>" \
-            "trail filename."
-        abcli_show_usage "abcli trail stop" \
-            "stop trailing."
-        return
-    fi
-
     [[ "$abcli_is_in_notebook" == true ]] && return
+
+    local task=$(abcli_unpack_keyword "$1" help)
 
     if [ "$task" == "stop" ]; then
         abcli_killall remote_syslog

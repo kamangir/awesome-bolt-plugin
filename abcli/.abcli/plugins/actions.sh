@@ -2,14 +2,6 @@
 
 function abcli_perform_action() {
     local options=$1
-
-    if [ $(abcli_option_int "$options" help 0) == 1 ]; then
-        local options="action=<action-name>,plugin=<plugin-name>"
-        abcli_show_usage "@perform_action $options$ABCUL<args>" \
-            "perform the action."
-        return
-    fi
-
     local action_name=$(abcli_option "$options" action void)
     local plugin_name=$(abcli_option "$options" plugin abcli)
 

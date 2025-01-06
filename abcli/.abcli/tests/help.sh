@@ -15,6 +15,8 @@ function test_abcli_help() {
         \
         "@browse" \
         \
+        "@build_README" \
+        \
         "@cat" \
         \
         "@docker browse " \
@@ -84,6 +86,8 @@ function test_abcli_help() {
         \
         "@pause" \
         \
+        "@perform_action" \
+        \
         "@plugins get_module_name" \
         "@plugins install" \
         "@plugins list_of_external" \
@@ -105,7 +109,14 @@ function test_abcli_help() {
         "@seed eject" \
         "@seed list" \
         \
+        "@select" \
+        \
         "@sleep" \
+        \
+        "@ssm" \
+        "@ssm get" \
+        "@ssm put" \
+        "@ssm rm" \
         \
         "@test" \
         "@test list" \
@@ -115,11 +126,16 @@ function test_abcli_help() {
         "@terraform disable" \
         "@terraform enable" \
         \
+        "@trail" \
+        "@trail stop" \
+        \
         "@watch" \
         \
         "abcli_log_list" \
         "abcli_source_caller_suffix_path" \
         "abcli_source_path" \
+        \
+        "abcli_blueness" \
         \
         "abcli"; do
         abcli_eval ,$options \

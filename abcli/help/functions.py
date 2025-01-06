@@ -1,6 +1,7 @@
 from abcli.help.generic import help_functions as generic_help_functions
-
+from abcli.help.actions import help_perform_action
 from abcli.help.aws_batch import help_functions as help_aws_batch
+from abcli.help.blueness import help_blueness
 from abcli.help.browse import help_browse
 from abcli.help.cp import help_cp
 from abcli.help.docker import help_functions as help_docker
@@ -19,17 +20,20 @@ from abcli.help.ls import help_ls
 from abcli.help.metadata import help_functions as help_metadata
 from abcli.help.mlflow import help_functions as help_mlflow
 from abcli.help.notebooks import help_functions as help_notebooks
+from abcli.help.papertrail import help_functions as help_papertrail
 from abcli.help.plugins import help_functions as help_plugins
 from abcli.help.open import help_open
 from abcli.help.pause import help_pause
 from abcli.help.repeat import help_repeat
 from abcli.help.sagemaker import help_functions as help_sagemaker
 from abcli.help.seed import help_functions as help_seed
+from abcli.help.select import help_select
 from abcli.help.sleep import help_sleep
 from abcli.help.source import (
     help_source_caller_suffix_path,
     help_source_path,
 )
+from abcli.help.ssm import help_functions as help_ssm
 from abcli.help.terminal import help_badge
 from abcli.help.terraform import help_functions as help_terraform
 from abcli.help.upload import help_upload
@@ -42,6 +46,7 @@ help_functions.update(
     {
         "aws_batch": help_aws_batch,
         "badge": help_badge,
+        "blueness": help_blueness,
         "browse": help_browse,
         "cat": help_cat,
         "cp": help_cp,
@@ -62,14 +67,18 @@ help_functions.update(
         "notebooks": help_notebooks,
         "open": help_open,
         "pause": help_pause,
+        "perform_action": help_perform_action,
         "plugins": help_plugins,
         "repeat": help_repeat,
         "sagemaker": help_sagemaker,
         "seed": help_seed,
+        "select": help_select,
         "sleep": help_sleep,
         "source_caller_suffix_path": help_source_caller_suffix_path,
         "source_path": help_source_path,
+        "ssm": help_ssm,
         "terraform": help_terraform,
+        "trail": help_papertrail,
         "upload": help_upload,
         "watch": help_watch,
     }

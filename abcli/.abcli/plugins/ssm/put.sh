@@ -3,19 +3,6 @@
 function abcli_ssm_put() {
     local options=$1
 
-    if [ $(abcli_option_int "$options" help 0) == 1 ]; then
-        local args="[--description <description>]"
-        abcli_show_usage "@ssm put <secret-name>$ABCUL<secret-value>$ABCUL$args" \
-            "put <secret-name> = <secret-value>"
-
-        abcli_show_usage "@ssm put plugin=<plugin-name>" \
-            "put <plugin-name> secrets"
-
-        abcli_show_usage "@ssm put repo=<repo-name>" \
-            "put <repo-name> secrets"
-        return
-    fi
-
     local secret_name
     local secret_value
 
