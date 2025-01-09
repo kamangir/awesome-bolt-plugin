@@ -4,9 +4,9 @@ NAME = "abcli"
 
 ICON = "🪄"
 
-DESCRIPTION = f"{ICON} a language to speak AI."
+DESCRIPTION = f"{ICON} A language to speak AI."
 
-VERSION = "9.452.1"
+VERSION = "9.453.1"
 
 REPO_NAME = "awesome-bash-cli"
 
