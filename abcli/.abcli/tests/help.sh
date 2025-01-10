@@ -94,6 +94,9 @@ function test_abcli_help() {
         "@plugins list_of_installed" \
         "@plugins transform" \
         \
+        "abcli_publish" \
+        "abcli_publish tar" \
+        \
         "@pylint" \
         \
         "@pypi" \
