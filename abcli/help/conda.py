@@ -38,7 +38,7 @@ def help_exists(
             "exists",
             f"[{options}]",
         ],
-        "does conda environment exist? true | false.",
+        "does conda environment exist?",
         mono=mono,
     )
 
