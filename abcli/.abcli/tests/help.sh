@@ -19,6 +19,12 @@ function test_abcli_help() {
         \
         "@cat" \
         \
+        "@conda" \
+        "@conda create" \
+        "@conda exists" \
+        "@conda list" \
+        "@conda rm" \
+        \
         "@docker browse " \
         "@docker build " \
         "@docker clear " \
