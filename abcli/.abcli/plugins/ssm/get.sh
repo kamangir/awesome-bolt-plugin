@@ -22,9 +22,14 @@ function abcli_ssm_get() {
             --format shell); do
 
             secret_name=$(python3 -c "print('$line'.split('=',1)[0])")
-            abcli_log "🔑 $secret_name"
 
             secret_value=$(abcli_ssm get $secret_name)
+
+            if [[ -z "$secret_value" ]]; then
+                abcli_log "🔑 $secret_name (blank)"
+            else
+                abcli_log "🔑 $secret_name"
+            fi
 
             export $secret_name=$secret_value
 
