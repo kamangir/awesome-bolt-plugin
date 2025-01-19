@@ -18,7 +18,7 @@ function test_abcli_plugin_name_from_repo() {
 
     abcli_assert \
         $(abcli_plugin_name_from_repo roofAI) \
-        roofAI
+        roofai
 
     abcli_assert \
         $(abcli_plugin_name_from_repo vancouver-watching) \
@@ -56,7 +56,7 @@ function test_abcli_get_module_name_from_plugin() {
         abadpour
 
     abcli_assert \
-        $(abcli_get_module_name_from_plugin roofAI) \
+        $(abcli_get_module_name_from_plugin roofai) \
         roofai
 
     abcli_assert \
