@@ -14,6 +14,7 @@ function abcli_git_push() {
     local first_push=$(abcli_option_int "$options" first 0)
     local create_pull_request=$(abcli_option_int "$options" create_pull_request $first_push)
     local do_action=$(abcli_option_int "$options" action 1)
+    local run_workflows=$(abcli_option_int "$options" workflow 1)
 
     if [[ "$do_increment_version" == 1 ]]; then
         abcli_git_increment_version
@@ -38,7 +39,11 @@ function abcli_git_push() {
     git add .
     [[ $? -ne 0 ]] && return 1
 
-    git commit -a -m "$message - kamangir/bolt#746"
+    message="$message - kamangir/bolt#746"
+    [[ "$run_workflows" == 0 ]] &&
+        message="$message - no-workflow 🪄"
+
+    git commit -a -m "$message"
     [[ $? -ne 0 ]] && return 1
 
     local extra_args=""
