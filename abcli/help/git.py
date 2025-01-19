@@ -196,7 +196,8 @@ def help_push(
             "browse",
             xtra(",~create_pull_request,", mono=mono),
             "first",
-            xtra(",~increment_version,~status", mono=mono),
+            xtra(",~increment_version,~status,", mono=mono),
+            "~workflow",
         ]
     )
 
