@@ -41,7 +41,7 @@ KEYWORDS = {
     "pk": "pack_keyword",
     "pr": "predict",
     "pub": "publish",
-    "roof": "roofAI",
+    "roof": "roofai",
     "rndr": "render",
     "rv22": "RAW_Vancouver_PORTAL_2022",
     "sel": "select",
