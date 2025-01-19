@@ -52,7 +52,7 @@ def test_list_of_installed(return_path: bool):
             "abadpour",
         ],
         [
-            "roofAI",
+            "roofai",
             "roofai",
             "roofai",
         ],

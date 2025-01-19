@@ -17,7 +17,7 @@ function test_abcli_plugin_name_from_repo() {
         CV
 
     abcli_assert \
-        $(abcli_plugin_name_from_repo roofAI) \
+        $(abcli_plugin_name_from_repo roofai) \
         roofai
 
     abcli_assert \
