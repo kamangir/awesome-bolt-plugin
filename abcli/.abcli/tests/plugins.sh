@@ -57,7 +57,7 @@ function test_abcli_get_module_name_from_plugin() {
 
     abcli_assert \
         $(abcli_get_module_name_from_plugin roofAI) \
-        roofAI
+        roofai
 
     abcli_assert \
         $(abcli_get_module_name_from_plugin vancouver_watching) \
