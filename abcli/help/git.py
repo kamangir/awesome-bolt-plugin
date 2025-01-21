@@ -43,17 +43,21 @@ def help_checkout(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "rebuild"
+    options = "".join(
+        [
+            xtra("~fetch,~pull,", mono=mono),
+            "rebuild",
+        ]
+    )
 
     return show_usage(
         [
             "@git",
             "checkout",
-            "<branch-name> | <path/filename>",
+            "<branch-name>",
             f"[{options}]",
-            "[<args>]",
         ],
-        "git checkout <args>.",
+        "git checkout <branch-name>.",
         mono=mono,
     )
 
