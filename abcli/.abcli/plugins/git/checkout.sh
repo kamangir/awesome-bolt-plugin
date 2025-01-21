@@ -9,8 +9,14 @@ function abcli_git_checkout() {
     fi
 
     local options=$2
+    local do_fetch=$(abcli_option_int "$options" fetch 1)
     local do_pull=$(abcli_option_int "$options" pull 1)
     local do_rebuild=$(abcli_option_int "$options" rebuild 0)
+
+    if [[ "$do_fetch" == 1 ]]; then
+        git fetch
+        [[ $? -ne 0 ]] && return 1
+    fi
 
     git checkout \
         "$thing" \
