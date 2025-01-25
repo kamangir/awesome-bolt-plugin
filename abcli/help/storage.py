@@ -7,12 +7,7 @@ def help_clear(
     tokens: List[str],
     mono: bool,
 ) -> str:
-    options = "".join(
-        [
-            "~dryrun",
-            xtra(",keep_recent", mono=mono),
-        ]
-    )
+    options = "~dryrun"
 
     return show_usage(
         [
