@@ -127,6 +127,14 @@ function test_abcli_help() {
         "@ssm put" \
         "@ssm rm" \
         \
+        "@storage" \
+        "@storage clear" \
+        "@storage download_file" \
+        "@storage exists" \
+        "@storage list" \
+        "@storage rm" \
+        "@storage status" \
+        \
         "@test" \
         "@test list" \
         \
