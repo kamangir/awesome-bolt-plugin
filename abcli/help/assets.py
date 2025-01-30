@@ -2,11 +2,6 @@ from typing import List
 
 from blue_options.terminal import show_usage, xtra
 
-default_list_of_extensions = [
-    "png",
-    "geojson",
-]
-
 
 def help_publish(
     tokens: List[str],
@@ -15,7 +10,7 @@ def help_publish(
     options = "".join(
         [
             xtra("download,", mono=mono),
-            "extension={},push".format("+".join(default_list_of_extensions)),
+            "extension=png+geojson,push",
         ]
     )
 
