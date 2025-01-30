@@ -1,5 +1,6 @@
 from abcli.help.generic import help_functions as generic_help_functions
 from abcli.help.actions import help_perform_action
+from abcli.help.assets import help_functions as help_assets
 from abcli.help.aws_batch import help_functions as help_aws_batch
 from abcli.help.blueness import help_blueness
 from abcli.help.browse import help_browse
@@ -47,6 +48,7 @@ help_functions = generic_help_functions(plugin_name="abcli")
 
 help_functions.update(
     {
+        "assets": help_assets,
         "aws_batch": help_aws_batch,
         "badge": help_badge,
         "blueness": help_blueness,
