@@ -9,7 +9,7 @@ def help_cp(
 ) -> str:
     options = "".join(
         [
-            xtra("cp,~download,", mono=mono),
+            xtra("~content,cp,~download,", mono=mono),
             "~relate",
             xtra(",~tags,", mono=mono),
             "upload",
