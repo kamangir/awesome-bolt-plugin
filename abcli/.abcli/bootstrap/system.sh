@@ -111,14 +111,6 @@ if [[ "$abcli_is_rpi" == true ]]; then
     fi
 fi
 
-if [ "$abcli_is_in_notebook" == false ]; then
-    if [[ "$abcli_is_ec2" == true ]]; then
-        conda activate amazonei_tensorflow2_p36
-    elif [[ "$abcli_is_mac" == true ]]; then
-        conda activate abcli
-    fi
-fi
-
 if [[ "$abcli_is_sagemaker_system" == true ]]; then
     export abcli_hostname=sagemaker_system
 elif [[ "$abcli_is_cloudshell" == true ]]; then
