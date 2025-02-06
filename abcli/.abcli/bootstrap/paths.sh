@@ -12,8 +12,8 @@ export abcli_path_temp="$ABCLI_PATH_STORAGE/temp"
 
 mkdir -pv $abcli_path_temp
 
-export abcli_path_ignore=$abcli_path_temp/ignore
+export ABCLI_PATH_IGNORE=$abcli_path_temp/ignore
 
-mkdir -pv $abcli_path_ignore
+mkdir -pv $ABCLI_PATH_IGNORE
 
 export abcli_path_assets=$abcli_path_abcli/abcli/assets

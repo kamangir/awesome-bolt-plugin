@@ -40,10 +40,10 @@ function abcli_session() {
             abcli_log "session initialized: username=$USER, hostname=$(hostname), EUID=$EUID, python3=$(which python3)"
 
             if [[ "$abcli_is_mac" == false ]]; then
-                sudo rm -v $abcli_path_ignore/session_reply_*
+                sudo rm -v $ABCLI_PATH_IGNORE/session_reply_*
                 abcli_storage clear
             else
-                rm -v $abcli_path_ignore/session_reply_*
+                rm -v $ABCLI_PATH_IGNORE/session_reply_*
             fi
 
             abcli_select
@@ -63,37 +63,37 @@ function abcli_session() {
 
             abcli_log "session closed."
 
-            if [ -f "$abcli_path_ignore/session_reply_exit" ]; then
+            if [ -f "$ABCLI_PATH_IGNORE/session_reply_exit" ]; then
                 abcli_log "abcli.reply_to_bash(exit)"
                 return
             fi
 
-            if [ -f "$abcli_path_ignore/session_reply_reboot" ]; then
+            if [ -f "$ABCLI_PATH_IGNORE/session_reply_reboot" ]; then
                 abcli_log "abcli.reply_to_bash(reboot)"
                 abcli_host reboot
             fi
 
-            if [ -f "$abcli_path_ignore/session_reply_seed" ]; then
+            if [ -f "$ABCLI_PATH_IGNORE/session_reply_seed" ]; then
                 abcli_log "abcli.reply_to_bash(seed)"
 
                 abcli_git_pull
                 abcli_init
 
-                cat "$abcli_path_ignore/session_reply_seed" | while read line; do
+                cat "$ABCLI_PATH_IGNORE/session_reply_seed" | while read line; do
                     abcli_log "executing: $line"
                     eval $line
                 done
             fi
 
-            if [ -f "$abcli_path_ignore/session_reply_shutdown" ]; then
+            if [ -f "$ABCLI_PATH_IGNORE/session_reply_shutdown" ]; then
                 abcli_host shutdown
             fi
 
-            if [ -f "$abcli_path_ignore/session_reply_update" ]; then
+            if [ -f "$ABCLI_PATH_IGNORE/session_reply_update" ]; then
                 abcli_log "abcli.reply_to_bash(update)"
             fi
 
-            if [ -f "$abcli_path_ignore/disabled" ]; then
+            if [ -f "$ABCLI_PATH_IGNORE/disabled" ]; then
                 abcli_log "abcli is disabled."
                 return
             fi

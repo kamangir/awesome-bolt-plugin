@@ -35,6 +35,8 @@ ABCLI_MESSENGER_RECIPIENTS = os.getenv("ABCLI_MESSENGER_RECIPIENTS", "")
 
 abcli_path_abcli = os.getenv("abcli_path_abcli", "")
 
+ABCLI_PATH_IGNORE = os.getenv("ABCLI_PATH_IGNORE", "")
+
 abcli_papertrail_dest_host = os.getenv("abcli_papertrail_dest_host", "")
 abcli_papertrail_dest_port = os.getenv("abcli_papertrail_dest_port", "")
 

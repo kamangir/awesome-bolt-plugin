@@ -36,20 +36,20 @@ function abcli_terraform() {
 
     if [ "$task" == "disable" ]; then
         abcli_eval - \
-            touch $abcli_path_ignore/disabled
+            touch $ABCLI_PATH_IGNORE/disabled
         return
     fi
 
     if [ "$task" == "enable" ]; then
-        rm -v $abcli_path_ignore/disabled
+        rm -v $ABCLI_PATH_IGNORE/disabled
         return
     fi
 
     if [[ "$abcli_is_headless" == false ]] &&
         [[ "$abcli_is_mac" == false ]] &&
         [[ "$abcli_is_docker" == false ]]; then
-        rm $abcli_path_ignore/background*
-        local background_image=$abcli_path_ignore/background-$(abcli_string_timestamp).jpg
+        rm $ABCLI_PATH_IGNORE/background*
+        local background_image=$ABCLI_PATH_IGNORE/background-$(abcli_string_timestamp).jpg
 
         python3 -m abcli.modules.terraform poster \
             --filename $background_image
