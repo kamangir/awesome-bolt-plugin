@@ -1,41 +1,20 @@
 #! /usr/bin/env bash
 
 function abcli_session() {
-    local task=$(abcli_unpack_keyword $1 help)
-
-    if [ "$task" == "help" ]; then
-        abcli_show_usage "abcli session get" \
-            "get session plugin name."
-        abcli_show_usage "abcli session set <plugin-name>" \
-            "set <plugin_name> as the session."
-        abcli_show_usage "abcli session start [~pull] [<args>]" \
-            "[do't pull repos and] start the session [w/ <args>]."
-        return
-    fi
-
-    if [ "$task" == "get" ]; then
-        echo $BLUE_SBC_SESSION
-        return
-    fi
-
-    if [ "$task" == "set" ]; then
-        local plugin_name=$2
-        abcli_env dot set session $plugin_name
-        return
-    fi
+    local task=$(abcli_unpack_keyword $1 start)
 
     if [ $task == "start" ]; then
         local options=$2
 
         local do_pull=1
-        [[ "$abcli_is_mac" == true ]] &&
-            do_pull=0
+        [[ "$abcli_is_mac" == true ]] && do_pull=0
         do_pull=$(abcli_option_int "$options" pull $do_pull)
 
         abcli_log "session started: $options ${@:3}"
 
         while true; do
-            [[ "$do_pull" == 1 ]] && abcli_git_pull init
+            [[ "$do_pull" == 1 ]] &&
+                abcli_git_pull init
 
             abcli_log "session initialized: username=$USER, hostname=$(hostname), EUID=$EUID, python3=$(which python3)"
 
@@ -46,17 +25,15 @@ function abcli_session() {
                 rm -v $ABCLI_PATH_IGNORE/session_reply_*
             fi
 
-            abcli_select
-
-            local plugin_name=$BLUE_SBC_SESSION
+            local plugin_name=$BLUE_SBC_SESSION_PLUGIN
             local function_name=${plugin_name}_session
             if [[ $(type -t $function_name) == "function" ]]; then
                 $function_name start ${@:3}
             else
                 if [ -z "$plugin_name" ]; then
-                    abcli_log_warning "-session: plugin not found."
+                    abcli_log_warning "@session: plugin not found."
                 else
-                    abcli_log_error "-session: plugin: $plugin_name: plugin not found."
+                    abcli_log_error "@session: plugin: $plugin_name: plugin not found."
                 fi
                 abcli_sleep seconds=60
             fi
@@ -104,6 +81,6 @@ function abcli_session() {
         return
     fi
 
-    abcli_log_error "-abcli: session: $task: command not found."
+    abcli_log_error "@session: $task: command not found."
     return 1
 }
