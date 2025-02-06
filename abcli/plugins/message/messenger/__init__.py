@@ -11,7 +11,7 @@ instance = Messenger(
                 "public",
                 host.get_name(),
             ]
-            + [thing for thing in env.abcli_messenger_recipients.split(",") if thing]
+            + [thing for thing in env.ABCLI_MESSENGER_RECIPIENTS.split(",") if thing]
         )
     )
 )

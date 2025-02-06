@@ -14,7 +14,7 @@ function abcli_session() {
     fi
 
     if [ "$task" == "get" ]; then
-        echo $abcli_session
+        echo $BLUE_SBC_SESSION
         return
     fi
 
@@ -48,7 +48,7 @@ function abcli_session() {
 
             abcli_select
 
-            local plugin_name=$(abcli_session get)
+            local plugin_name=$BLUE_SBC_SESSION
             local function_name=${plugin_name}_session
             if [[ $(type -t $function_name) == "function" ]]; then
                 $function_name start ${@:3}
