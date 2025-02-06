@@ -11,11 +11,6 @@ function abcli_init() {
         [[ "$abcli_is_mac" == true ]] &&
             local options=~terraform,$options
 
-        local repo_name
-        for repo_name in $(echo $abcli_plugins_must_have | tr , " "); do
-            abcli_git clone $repo_name if_cloned,install
-        done
-
         source $abcli_path_abcli/abcli/.abcli/abcli.sh "$options" "${@:3}"
     elif [ "$plugin_name" == "clear" ]; then
         abcli_init - clear

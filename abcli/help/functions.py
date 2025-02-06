@@ -31,6 +31,7 @@ from abcli.help.repeat import help_repeat
 from abcli.help.sagemaker import help_functions as help_sagemaker
 from abcli.help.seed import help_functions as help_seed
 from abcli.help.select import help_select
+from abcli.help.session import help_functions as help_session
 from abcli.help.storage import help_functions as help_storage
 from abcli.help.sleep import help_sleep
 from abcli.help.source import (
@@ -81,6 +82,7 @@ help_functions.update(
         "seed": help_seed,
         "select": help_select,
         "sleep": help_sleep,
+        "session": help_session,
         "storage": help_storage,
         "source_caller_suffix_path": help_source_caller_suffix_path,
         "source_path": help_source_path,

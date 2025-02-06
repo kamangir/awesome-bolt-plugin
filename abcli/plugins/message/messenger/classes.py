@@ -1,4 +1,7 @@
-from abcli.plugins.message.queue import MessageQueue
+from typing import List, Tuple
+
+from abcli.plugins.message.classes import Message
+from abcli.plugins.message.queue.classes import MessageQueue
 
 
 class Messenger:
@@ -6,32 +9,19 @@ class Messenger:
         self.recipients = recipients
         self._queue = {}
 
-    def queue(self, name):
-        """get message queue[name].
-
-        Args:
-            name (str): name
-
-        Returns:
-            MessageQueue: message queue.
-        """
+    def queue(self, name: str) -> MessageQueue:
         if name not in self._queue:
             self._queue[name] = MessageQueue(name)
 
         return self._queue[name]
 
-    def request(self, recipients=None, count=10, delete=False):
-        """request messages.
+    def request(
+        self,
+        recipients=None,
+        count: int = 10,
+        delete: bool = False,
+    ) -> Tuple[bool, List[Message]]:
 
-        Args:
-            recipients (Any, optional): recipients. Defaults to None.
-            count (int, optional): count to return. Defaults to 10.
-            delete (bool, optional): delete messages. Defaults to False.
-
-        Returns:
-            bool: success.
-            List[Message]: list of messages.
-        """
         output = []
         success = True
 

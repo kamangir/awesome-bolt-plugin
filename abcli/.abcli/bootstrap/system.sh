@@ -31,7 +31,7 @@ if [ "$(uname -m)" == "x86_64" ]; then
     export abcli_is_64bit=true
 fi
 
-if [ -f "$abcli_path_ignore/headless" ]; then
+if [ -f "$ABCLI_PATH_IGNORE/headless" ]; then
     export abcli_is_headless=true
 fi
 
@@ -108,14 +108,6 @@ if [[ "$abcli_is_rpi" == true ]]; then
 
         # wait for internet connection to establish
         sleep 5
-    fi
-fi
-
-if [ "$abcli_is_in_notebook" == false ]; then
-    if [[ "$abcli_is_ec2" == true ]]; then
-        conda activate amazonei_tensorflow2_p36
-    elif [[ "$abcli_is_mac" == true ]]; then
-        conda activate abcli
     fi
 fi
 

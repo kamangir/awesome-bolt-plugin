@@ -45,6 +45,8 @@ alias @random=abcli_string_random
 
 alias @seed=abcli_seed
 
+alias @session=abcli_session
+
 alias @ssm=abcli_ssm
 
 alias @storage=abcli_storage

@@ -120,6 +120,9 @@ function test_abcli_help() {
         \
         "@select" \
         \
+        "@session" \
+        "@session start" \
+        \
         "@sleep" \
         \
         "@ssm" \

@@ -1,3 +1,1 @@
-NAME = "abcli.plugin.gpu"
-
-from .functions import *
+from abcli.plugins.gpu.functions import get_status, validate

@@ -80,7 +80,7 @@ function abcli_ssh_args() {
             abcli_seed ec2 clipboard,env=worker,~log
         fi
 
-        local pem_filename=$abcli_path_ignore/$abcli_aws_ec2_key_name.pem
+        local pem_filename=$ABCLI_PATH_IGNORE/$abcli_aws_ec2_key_name.pem
         chmod 400 $pem_filename
         if [ "$for_vnc" == 1 ]; then
             echo "-i $pem_filename -L 5901:localhost:5901 $address"
