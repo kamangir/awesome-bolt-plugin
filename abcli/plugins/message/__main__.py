@@ -7,6 +7,7 @@ from blueness.argparse.generic import sys_exit
 from blue_objects import file
 
 from abcli import NAME, VERSION
+from abcli.plugins.message.messenger import instance as messenger
 from abcli.plugins.message.classes import Message
 from abcli.plugins.message.functions import submit_object
 from abcli.logger import logger
@@ -70,8 +71,6 @@ args = parser.parse_args()
 
 success = False
 if args.task == "listen_as":
-    from .messenger import instance as messenger
-
     messages = []
 
     try:
