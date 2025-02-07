@@ -1,12 +1,12 @@
-from typing import List
+from typing import List, Tuple
 
 import numpy as np
 import platform
 
 from blueness import module
 from blue_options import host, string
+from blue_options.logger import crash_report
 from blue_options.env import abcli_wifi_ssid
-from blue_objects import file
 
 from abcli import NAME, fullname
 from abcli.logger import logger
@@ -27,6 +27,7 @@ def poster(filename: str) -> bool:
     from blue_objects.graphics.text import render_text
     from blue_objects.graphics.frame import add_frame
     from blue_objects.graphics import screen
+    from blue_objects import file
 
     logger.debug("{}.poster({})".format(NAME, filename))
 
@@ -78,13 +79,48 @@ def rpi(_, is_headless=False):
     return success
 
 
+def load_text_file(
+    filename: str,
+) -> Tuple[bool, List[str]]:
+    try:
+        with open(filename, "r") as fp:
+            text = fp.read()
+        text = text.split("\n")
+
+        return True, text
+    except Exception as e:
+        crash_report(e)
+        return False, []
+
+
+def save_text__file_if_different(
+    filename: str,
+    text: List[str],
+) -> bool:
+    _, content = load_text_file(filename, ignore_error=True)
+    if "|".join([line for line in content if line]) == "|".join(
+        [line for line in text if line]
+    ):
+        return True
+
+    try:
+        with open(filename, "w") as fp:
+            fp.writelines([string + "\n" for string in text])
+
+        logger.info(f"updated {filename} ...")
+        return True
+    except Exception as e:
+        crash_report(e)
+        return False
+
+
 def terraform(
     filenames: List[str],
     commands: List[str],
 ) -> bool:
     success = True
     for filename, command in zip(filenames, commands):
-        success_, content = file.load_text(filename)
+        success_, content = load_text_file(filename)
         if not success_:
             success = False
             continue
@@ -95,11 +131,9 @@ def terraform(
             if ("git/awesome-bash-cli" not in string) and string
         ] + [command]
 
-        if not file.save_text(
+        if not save_text__file_if_different(
             filename,
             content_updated,
-            if_different=True,
-            log=True,
         ):
             success = False
 
