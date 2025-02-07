@@ -18,7 +18,9 @@ def lxde(_):
     return terraform(
         ["/etc/xdg/lxsession/LXDE/autostart"],
         [
-            "@bash /home/pi/git/awesome-bash-cli/abcli/.abcli/abcli.sh - abcli session start"
+            [
+                "@bash /home/pi/git/awesome-bash-cli/abcli/.abcli/abcli.sh - abcli session start"
+            ]
         ],
     )
 
@@ -53,7 +55,9 @@ def poster(filename: str) -> bool:
 def mac(user):
     return terraform(
         ["/Users/{}/.bash_profile".format(user)],
-        ["source ~/git/awesome-bash-cli/abcli/.abcli/abcli.sh"],
+        [
+            ["source ~/git/awesome-bash-cli/abcli/.abcli/abcli.sh"],
+        ],
     )
 
 
@@ -61,9 +65,11 @@ def rpi(_, is_headless=False):
     success = terraform(
         ["/home/pi/.bashrc"],
         [
-            "source /home/pi/git/awesome-bash-cli/abcli/.abcli/abcli.sh{}".format(
-                "  - abcli session start" if is_headless else ""
-            )
+            [
+                "source /home/pi/git/awesome-bash-cli/abcli/.abcli/abcli.sh{}".format(
+                    "  - abcli session start" if is_headless else ""
+                )
+            ]
         ],
     )
 
@@ -71,8 +77,10 @@ def rpi(_, is_headless=False):
         if not terraform(
             ["/etc/xdg/lxsession/LXDE-pi/autostart"],
             [
-                '@lxterminal -e echo "LXDE autostart is working" > /home/pi/autostart_test.log',
-                "@bash /home/pi/git/awesome-bash-cli/abcli/.abcli/abcli.sh  - abcli session start  > /home/pi/startup.log 2>&1",
+                [
+                    '@lxterminal -e echo "git/awesome-bash-cli: LXDE autostart is working" > /home/pi/autostart_test.log',
+                    "@bash /home/pi/git/awesome-bash-cli/abcli/.abcli/abcli.sh  - abcli session start  > /home/pi/startup.log 2>&1",
+                ]
             ],
         ):
             success = False
@@ -115,11 +123,11 @@ def save_text__file_if_different(
 
 
 def terraform(
-    filenames: List[str],
-    commands: List[str],
+    list_of_filenames: List[str],
+    list_of_commands: List[List[str]],
 ) -> bool:
     success = True
-    for filename, command in zip(filenames, commands):
+    for filename, commands in zip(list_of_filenames, list_of_commands):
         success_, content = load_text_file(filename)
         if not success_:
             success = False
@@ -129,7 +137,7 @@ def terraform(
             string
             for string in content
             if ("git/awesome-bash-cli" not in string) and string
-        ] + [command]
+        ] + commands
 
         if not save_text__file_if_different(
             filename,
@@ -167,5 +175,7 @@ def signature() -> List[str]:
 def ubuntu(user):
     return terraform(
         ["/home/{}/.bashrc".format(user)],
-        ["source /home/{}/git/awesome-bash-cli/abcli/.abcli/abcli.sh".format(user)],
+        [
+            ["source /home/{}/git/awesome-bash-cli/abcli/.abcli/abcli.sh".format(user)],
+        ],
     )
