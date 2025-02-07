@@ -78,13 +78,13 @@ def rpi(_, is_headless=False):
             ["/etc/xdg/lxsession/LXDE-pi/autostart"],
             [
                 [
-                    "@bash 'echo \"LXDE autostart is working\" > /home/pi/awesome-bash-cli-autostart-test.log'",
-                    "@bash 'whoami > /home/pi/awesome-bash-cli-startup-user.log'",
-                    "@bash 'env > /home/pi/awesome-bash-cli-startup-env.log'",
-                    "@sudo -u pi bash 'echo \"LXDE autostart is working\" > /home/pi/awesome-bash-cli-autostart-test.log'",
-                    "@sudo -u pi bash 'whoami > /home/pi/awesome-bash-cli-startup-user.log'",
-                    "@sudo -u pi bash 'env > /home/pi/awesome-bash-cli-startup-env.log'",
-                    "@sudo -u pi bash /home/pi/git/awesome-bash-cli/abcli/.abcli/abcli.sh - abcli session start",
+                    "@bash -c 'echo \"LXDE autostart is working\" > /home/pi/awesome-bash-cli-autostart-test.log'",
+                    "@bash -c 'whoami > /home/pi/awesome-bash-cli-startup-user.log'",
+                    "@bash -c 'env > /home/pi/awesome-bash-cli-startup-env.log'",
+                    "@sudo -u pi bash -c 'echo \"LXDE autostart is working\" > /sudo-home/pi/awesome-bash-cli-autostart-test.log'",
+                    "@sudo -u pi bash -c 'whoami > /home/pi/sudo-awesome-bash-cli-startup-user.log'",
+                    "@sudo -u pi bash -c 'env > /home/pi/sudo-awesome-bash-cli-startup-env.log'",
+                    "@lxterminal -e \"bash -c 'sleep 5; sudo -u pi /home/pi/git/awesome-bash-cli/abcli/.abcli/abcli.sh - abcli session start'\"",
                 ]
             ],
         ):
