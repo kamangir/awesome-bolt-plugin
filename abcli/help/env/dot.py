@@ -45,7 +45,7 @@ def help_cp(
             "cp | copy",
             "<env-name>",
             "local | jetson_nano | rpi",
-            "<machine-name>",
+            "[<machine-name>]",
         ],
         "cp <env-name> to machine.",
         mono=mono,
