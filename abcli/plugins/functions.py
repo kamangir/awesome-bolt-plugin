@@ -58,6 +58,9 @@ def list_of_installed(return_path: bool = False) -> List[str]:
         if module.key in ["abcli"]:
             continue
 
+        if module.module_path is None:
+            continue
+
         if "git" in module.module_path.split(os.sep):
             continue
 
