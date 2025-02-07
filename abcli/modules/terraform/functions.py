@@ -88,7 +88,7 @@ def load_text_file(
         text = text.split("\n")
 
         return True, text
-    except Exception as e:
+    except:
         return False, []
 
 
