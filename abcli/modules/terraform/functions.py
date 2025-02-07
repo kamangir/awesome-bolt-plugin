@@ -78,7 +78,9 @@ def rpi(_, is_headless=False):
             ["/etc/xdg/lxsession/LXDE-pi/autostart"],
             [
                 [
-                    '@lxterminal -e echo "git/awesome-bash-cli: LXDE autostart is working" > /home/pi/autostart_test.log',
+                    "@bash -c 'echo \"LXDE autostart is working\" > /home/pi/awesome-bash-cli-autostart-test.log'",
+                    "@bash -c 'whoami > /home/pi/awesome-bash-cli-startup-user.log'",
+                    "@bash -c 'env > /home/pi/awesome-bash-cli-startup-env.log'",
                     "@bash /home/pi/git/awesome-bash-cli/abcli/.abcli/abcli.sh  - abcli session start  > /home/pi/startup.log 2>&1",
                 ]
             ],
@@ -136,7 +138,7 @@ def terraform(
         content_updated = [
             string
             for string in content
-            if ("git/awesome-bash-cli" not in string) and string
+            if ("awesome-bash-cli" not in string) and string
         ] + commands
 
         if not save_text__file_if_different(
