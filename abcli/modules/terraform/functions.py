@@ -71,7 +71,8 @@ def rpi(_, is_headless=False):
         if not terraform(
             ["/etc/xdg/lxsession/LXDE-pi/autostart"],
             [
-                "@bash /home/pi/git/awesome-bash-cli/abcli/.abcli/abcli.sh  - abcli session start"
+                '@lxterminal -e echo "LXDE autostart is working" > /home/pi/autostart_test.log',
+                "@bash /home/pi/git/awesome-bash-cli/abcli/.abcli/abcli.sh  - abcli session start  > /home/pi/startup.log 2>&1",
             ],
         ):
             success = False
