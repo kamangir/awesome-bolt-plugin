@@ -1,12 +1,5 @@
 blueness
 blue-options
+blue-objects
 
 boto3
-matplotlib
-numpy
-pymysql
-pyyaml
-pylint
-pytest
-python-dotenv[cli]
-tqdm
