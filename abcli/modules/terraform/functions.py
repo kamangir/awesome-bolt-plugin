@@ -89,7 +89,6 @@ def load_text_file(
 
         return True, text
     except Exception as e:
-        crash_report(e)
         return False, []
 
 
@@ -97,8 +96,8 @@ def save_text__file_if_different(
     filename: str,
     text: List[str],
 ) -> bool:
-    _, content = load_text_file(filename, ignore_error=True)
-    if "|".join([line for line in content if line]) == "|".join(
+    _, current_text = load_text_file(filename)
+    if "|".join([line for line in current_text if line]) == "|".join(
         [line for line in text if line]
     ):
         return True
