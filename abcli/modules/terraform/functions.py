@@ -7,9 +7,6 @@ from blueness import module
 from blue_options import host, string
 from blue_options.env import abcli_wifi_ssid
 from blue_objects import file
-from blue_objects.graphics import screen
-from blue_objects.graphics.frame import add_frame
-from blue_objects.graphics.text import render_text
 
 from abcli import NAME, fullname
 from abcli.logger import logger
@@ -27,6 +24,10 @@ def lxde(_):
 
 
 def poster(filename: str) -> bool:
+    from blue_objects.graphics.text import render_text
+    from blue_objects.graphics.frame import add_frame
+    from blue_objects.graphics import screen
+
     logger.debug("{}.poster({})".format(NAME, filename))
 
     image = add_frame(
