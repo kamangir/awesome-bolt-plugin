@@ -11,7 +11,7 @@ function abcli_source_dependencies() {
     python3 -m blueness version \
         --show_icon 1
 
-    source $(python -m blue_options locate)/.bash/blue_options.sh
+    source $(python3 -m blue_options locate)/.bash/blue_options.sh
 
     local module_name
     for module_name in abcli modules plugins; do
