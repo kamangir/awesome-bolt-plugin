@@ -23,11 +23,12 @@ from abcli.help.ls import help_ls
 from abcli.help.metadata import help_functions as help_metadata
 from abcli.help.mlflow import help_functions as help_mlflow
 from abcli.help.notebooks import help_functions as help_notebooks
+from abcli.help.object import help_functions as help_object
+from abcli.help.open import help_open
 from abcli.help.papertrail import help_functions as help_papertrail
+from abcli.help.pause import help_pause
 from abcli.help.plugins import help_functions as help_plugins
 from abcli.help.publish import help_functions as help_publish
-from abcli.help.open import help_open
-from abcli.help.pause import help_pause
 from abcli.help.repeat import help_repeat
 from abcli.help.sagemaker import help_functions as help_sagemaker
 from abcli.help.seed import help_functions as help_seed
@@ -74,6 +75,7 @@ help_functions.update(
         "metadata": help_metadata,
         "mlflow": help_mlflow,
         "notebooks": help_notebooks,
+        "object": help_object,
         "open": help_open,
         "pause": help_pause,
         "perform_action": help_perform_action,
