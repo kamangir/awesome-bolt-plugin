@@ -5,7 +5,7 @@ from abcli.help.aws_batch import help_functions as help_aws_batch
 from abcli.help.blueness import help_blueness
 from abcli.help.browse import help_browse
 from abcli.help.conda import help_functions as help_conda
-from abcli.help.cp import help_cp
+from abcli.help.clone import help_clone
 from abcli.help.docker import help_functions as help_docker
 from abcli.help.download import help_download
 from abcli.help.env import help_functions as help_env
@@ -55,8 +55,8 @@ help_functions.update(
         "blueness": help_blueness,
         "browse": help_browse,
         "cat": help_cat,
+        "clone": help_clone,
         "conda": help_conda,
-        "cp": help_cp,
         "docker": help_docker,
         "download": help_download,
         "env": help_env,
