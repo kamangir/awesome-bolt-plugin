@@ -28,7 +28,7 @@ function abcli_session() {
             local plugin_name=$BLUE_SBC_SESSION_PLUGIN
             local function_name=${plugin_name}_session
             if [[ $(type -t $function_name) == "function" ]]; then
-                $function_name start ${@:3}
+                $function_name start "${@:3}"
             else
                 if [ -z "$plugin_name" ]; then
                     abcli_log_warning "@session: plugin not found."

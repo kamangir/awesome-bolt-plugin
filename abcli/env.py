@@ -40,15 +40,7 @@ ABCLI_PATH_IGNORE = os.getenv("ABCLI_PATH_IGNORE", "")
 abcli_papertrail_dest_host = os.getenv("abcli_papertrail_dest_host", "")
 abcli_papertrail_dest_port = os.getenv("abcli_papertrail_dest_port", "")
 
-abcli_youtube_api_key = os.getenv("abcli_youtube_api_key", "")
-
-STABILITY_KEY = os.getenv("STABILITY_KEY", "")
-
 VANWATCH_TEST_OBJECT = os.getenv("VANWATCH_TEST_OBJECT", "vanwatch-test-object-v2")
-
-NGROK_AUTHTOKEN = os.getenv("NGROK_AUTHTOKEN", "")
-
-COMFYUI_PASSWORD = os.getenv("COMFYUI_PASSWORD", "")
 
 ABCLI_MLFLOW_STAGES = os.getenv("ABCLI_MLFLOW_STAGES", "")
 
