@@ -3,7 +3,7 @@ from typing import List
 from blue_options.terminal import show_usage, xtra
 
 
-def help_cp(
+def help_clone(
     tokens: List[str],
     mono: bool,
 ) -> str:

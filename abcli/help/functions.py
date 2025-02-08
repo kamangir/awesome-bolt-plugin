@@ -5,7 +5,7 @@ from abcli.help.aws_batch import help_functions as help_aws_batch
 from abcli.help.blueness import help_blueness
 from abcli.help.browse import help_browse
 from abcli.help.conda import help_functions as help_conda
-from abcli.help.cp import help_cp
+from abcli.help.clone import help_clone
 from abcli.help.docker import help_functions as help_docker
 from abcli.help.download import help_download
 from abcli.help.env import help_functions as help_env
@@ -13,6 +13,7 @@ from abcli.help.eval import help_eval
 from abcli.help.gif import help_gif
 from abcli.help.git import help_functions as help_git
 from abcli.help.gpu import help_functions as help_gpu
+from abcli.help.host import help_functions as help_host
 from abcli.help.init import help_init
 from abcli.help.latex import help_functions as help_latex
 from abcli.help.logging import help_cat
@@ -22,11 +23,12 @@ from abcli.help.ls import help_ls
 from abcli.help.metadata import help_functions as help_metadata
 from abcli.help.mlflow import help_functions as help_mlflow
 from abcli.help.notebooks import help_functions as help_notebooks
+from abcli.help.object import help_functions as help_object
+from abcli.help.open import help_open
 from abcli.help.papertrail import help_functions as help_papertrail
+from abcli.help.pause import help_pause
 from abcli.help.plugins import help_functions as help_plugins
 from abcli.help.publish import help_functions as help_publish
-from abcli.help.open import help_open
-from abcli.help.pause import help_pause
 from abcli.help.repeat import help_repeat
 from abcli.help.sagemaker import help_functions as help_sagemaker
 from abcli.help.seed import help_functions as help_seed
@@ -55,8 +57,8 @@ help_functions.update(
         "blueness": help_blueness,
         "browse": help_browse,
         "cat": help_cat,
+        "clone": help_clone,
         "conda": help_conda,
-        "cp": help_cp,
         "docker": help_docker,
         "download": help_download,
         "env": help_env,
@@ -64,6 +66,7 @@ help_functions.update(
         "gif": help_gif,
         "git": help_git,
         "gpu": help_gpu,
+        "host": help_host,
         "init": help_init,
         "latex": help_latex,
         "log": help_log,
@@ -72,6 +75,7 @@ help_functions.update(
         "metadata": help_metadata,
         "mlflow": help_mlflow,
         "notebooks": help_notebooks,
+        "object": help_object,
         "open": help_open,
         "pause": help_pause,
         "perform_action": help_perform_action,
