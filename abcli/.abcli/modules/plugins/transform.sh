@@ -20,37 +20,9 @@ function abcli_plugins_transform() {
 
     rm -v $plugin_name/.abcli/session.sh
 
-    local alias_name=""
-    if [[ "$repo_name" == blue-* ]]; then
-        alias_name=@$(echo $repo_name | sed "s/blue-//g")
-
-        abcli_log "alias: $alias_name"
-    fi
-
-    local filename
-    for filename in $(find . -type f \( -name "*.sh" \
-        -o -name "*.py" \
-        -o -name "*.yml" \)); do
-
-        blue_objects_file replace \
-            $filename \
-            --this blue_plugin \
-            --that $plugin_name
-
-        blue_objects_file replace \
-            $filename \
-            --this blue-plugin \
-            --that $repo_name
-
-        [[ ! -z "$alias_name" ]] &&
-            blue_objects_file replace \
-                $filename \
-                --this @plugin \
-                --that $alias_name
-
-    done
-
-    echo "# $plugin_name" >README.md
-
-    popd >/dev/null
+    python3 -m abcli.plugins \
+        transform \
+        --repo_name $repo_name \
+        --plugin_name $plugin_name \
+        "${@:2}"
 }

@@ -10,6 +10,7 @@ from abcli.plugins.functions import (
     list_of_external,
     list_of_installed,
 )
+from abcli.plugins.transformation import transform
 from abcli.logger import logger
 
 NAME = module.name(__file__, NAME)
@@ -19,7 +20,7 @@ parser.add_argument(
     "task",
     type=str,
     default="",
-    help="get_module_name|get_plugin_name|list_of_external|list_of_installed",
+    help="get_module_name | get_plugin_name | list_of_external | list_of_installed | transform",
 )
 parser.add_argument(
     "--delim",
@@ -90,6 +91,11 @@ elif args.task in ["list_of_external", "list_of_installed"]:
     else:
         print(delim.join(output))
     success = True
+elif args.task == "transform":
+    success = transform(
+        args.repo_name,
+        args.plugin_name,
+    )
 else:
     success = None
 
