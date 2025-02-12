@@ -10,7 +10,7 @@ def help_publish(
     options = "".join(
         [
             xtra("download,", mono=mono),
-            "extension=png+geojson,push",
+            "extensions=png+geojson,push",
         ]
     )
 
