@@ -8,7 +8,7 @@ function abcli_git_review() {
     local list_of_files=$(git diff --name-only HEAD | tr "\n" " ")
     local list_of_files=$(abcli_list_nonempty "$list_of_files" --delim space)
     if [[ -z "$list_of_files" ]]; then
-        abcli_log_warning "-abcli: git: review: no changes."
+        abcli_log_warning "@git: review: no changes."
         popd >/dev/null
         return
     fi
