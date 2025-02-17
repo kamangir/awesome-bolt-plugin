@@ -14,14 +14,19 @@ def help_publish(
         ]
     )
 
+    args = [
+        "[--prefix <prefix>]",
+    ]
+
     return show_usage(
         [
             "@assets",
             "publish",
             f"[{options}]",
             "[.|<object-name>]",
-        ],
-        "<object-name -> assets.",
+        ]
+        + args,
+        "<object-name>/<prefix> -> assets.",
         mono=mono,
     )
 
