@@ -61,6 +61,7 @@ function test_abcli_help() {
         "@git recreate_ssh" \
         "@git reset" \
         "@git review" \
+        "@git rm" \
         "@git status" \
         "@git sync_fork" \
         \

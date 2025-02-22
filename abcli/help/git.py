@@ -1,4 +1,3 @@
-import os
 from typing import List
 
 from blue_options.terminal import show_usage, xtra
@@ -262,6 +261,21 @@ def help_review(
     )
 
 
+def help_rm(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    return show_usage(
+        [
+            "@git",
+            "rm",
+            "<repo_name>",
+        ],
+        "rm <repo-name>.",
+        mono=mono,
+    )
+
+
 def help_status(
     tokens: List[str],
     mono: bool,
@@ -309,6 +323,7 @@ help_functions = {
     "recreate_ssh": help_recreate_ssh,
     "reset": help_reset,
     "review": help_review,
+    "rm": help_rm,
     "status": help_status,
     "sync_fork": help_sync_fork,
 }
