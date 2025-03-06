@@ -17,7 +17,7 @@ def help_(
             "[cat,dryrun]",
             "<command-line>",
         ],
-        "generate and output a seed 🌱.",
+        "generate and output a seed 🌱 .",
         mono=mono,
     )
 
@@ -31,7 +31,7 @@ def help_eject(
             "@seed",
             "eject",
         ],
-        "eject seed 🌱.",
+        "eject seed 🌱 .",
         mono=mono,
     )
 
@@ -45,7 +45,7 @@ def help_list(
             "@seed",
             "list",
         ],
-        "list seed 🌱 targets.",
+        "list seed 🌱  targets.",
         mono=mono,
     )
 
