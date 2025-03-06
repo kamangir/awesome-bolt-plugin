@@ -109,7 +109,7 @@ def help_seed(
             "@docker",
             "seed",
         ],
-        "seed docker 🌱.",
+        "seed docker 🌱 .",
         mono=mono,
     )
 

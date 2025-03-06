@@ -62,6 +62,7 @@ function test_abcli_help() {
         "@git reset" \
         "@git review" \
         "@git rm" \
+        "@git seed" \
         "@git status" \
         "@git sync_fork" \
         \
