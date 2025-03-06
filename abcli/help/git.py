@@ -276,6 +276,23 @@ def help_rm(
     )
 
 
+def help_seed(
+    tokens: List[str],
+    mono: bool,
+) -> str:
+    options = xtra("screen", mono=mono)
+
+    return show_usage(
+        [
+            "@git",
+            "seed",
+            f"[{options}]",
+        ],
+        "seed 🌱  git.",
+        mono=mono,
+    )
+
+
 def help_status(
     tokens: List[str],
     mono: bool,
@@ -324,6 +341,7 @@ help_functions = {
     "reset": help_reset,
     "review": help_review,
     "rm": help_rm,
+    "seed": help_seed,
     "status": help_status,
     "sync_fork": help_sync_fork,
 }
